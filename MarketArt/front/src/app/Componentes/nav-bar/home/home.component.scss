@@ -1,0 +1,11 @@
+#irAhome{
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 0.5rem 0.5rem;
+    margin-left: 2rem;
+
+    &:hover{
+        color: lightcoral;
+    }
+}

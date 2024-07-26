@@ -1,0 +1,61 @@
+.pedidoDiv {
+    display: none;
+}
+
+.pedidoDiv.active {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+#hero-hacerPedido {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    h2 {
+        text-align: center;
+    }
+
+    #datosUsuario {
+        input {
+            margin-bottom: 1rem;
+        }
+
+        #boton {
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+                display: flex;
+            }
+        }
+    }
+
+
+    #resumenPedido {
+        #botones {
+            display: inline-flex;
+            justify-content: center;
+
+            button {
+                display: flex;
+                margin: 0 2rem;
+            }
+        }
+    }
+
+
+    #finalizarPedido {
+        #botones {
+            display: inline-flex;
+            justify-content: center;
+            margin-top: 2rem;
+
+            button {
+                display: flex;
+                margin: 0 2rem;
+            }
+        }
+    }
+}

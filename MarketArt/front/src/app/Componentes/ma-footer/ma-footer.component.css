@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&family=Roboto:wght@100;400&display=swap");
+footer {
+  color: white;
+  background-color: #D60000;
+}
+footer #divFooter1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  background-color: #D60000;
+}
+footer #divFooter1 ul {
+  font-family: "Montserrat", sans-serif;
+  margin: 0 6rem;
+  padding-top: 3rem;
+}
+footer #divFooter1 h2 {
+  font-family: "Playfair Display", serif;
+}
+footer #divFooter2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  height: 5rem;
+  padding: 0px 35%;
+  margin: 2rem 0;
+  background-color: #D60000;
+}
+footer #divFooter2 label {
+  width: -moz-max-content;
+  width: max-content;
+  margin-bottom: 0.3rem;
+}
+footer #divFooter2 input {
+  border-radius: 0.4rem;
+  padding: 0.2rem;
+  width: 20rem;
+}
+footer #divFooter3 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-family: "Montserrat", sans-serif;
+  height: 3rem;
+  background-color: black;
+}
+footer #divFooter3 p {
+  margin-right: 1rem;
+  margin-bottom: 0.2rem;
+  font-size: small;
+}/*# sourceMappingURL=ma-footer.component.css.map */

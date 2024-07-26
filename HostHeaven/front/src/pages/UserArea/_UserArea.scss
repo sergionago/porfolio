@@ -1,0 +1,46 @@
+@use '../../styles/vars';
+
+
+#tabs ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li {
+        padding: 1rem;
+        background-color: white;
+        cursor: pointer;
+
+        &.active {
+            background-color: vars.$background-white;
+            font-weight: bold;
+        }
+
+        &:not(.active):hover {
+            background-color: #f6f6f6;
+        }
+    }
+}
+
+
+
+#tab-content {
+
+    &>article {
+        margin: 0;
+        padding: 2rem;
+        background-color: vars.$background-white;
+
+        &.active {
+            display: block;
+        }
+
+        >p {
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+    }
+}

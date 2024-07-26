@@ -1,0 +1,27 @@
+#hero-detallePedidos {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 5rem;
+  border: 1px solid black;
+}
+#hero-detallePedidos .detalle {
+  display: flex;
+  border: 1px solid lightgrey;
+  flex-direction: column;
+  height: 9rem;
+  width: 14rem;
+  padding: 1rem;
+}
+#hero-detallePedidos .detalle .imgNomb {
+  text-align: center;
+}
+#hero-detallePedidos .detalle .imgNomb img {
+  width: 3rem;
+  height: 3rem;
+}
+#hero-detallePedidos .detalle .cantPrec {
+  display: inline-flex;
+}
+#hero-detallePedidos .detalle .cantPrec p {
+  margin-right: 0.2rem;
+}/*# sourceMappingURL=detalle-pedido.component.css.map */

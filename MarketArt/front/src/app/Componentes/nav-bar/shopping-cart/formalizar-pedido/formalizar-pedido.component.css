@@ -1,0 +1,45 @@
+.pedidoDiv {
+  display: none;
+}
+
+.pedidoDiv.active {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+#hero-hacerPedido {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+#hero-hacerPedido h2 {
+  text-align: center;
+}
+#hero-hacerPedido #datosUsuario input {
+  margin-bottom: 1rem;
+}
+#hero-hacerPedido #datosUsuario #boton {
+  display: flex;
+  justify-content: flex-end;
+}
+#hero-hacerPedido #datosUsuario #boton button {
+  display: flex;
+}
+#hero-hacerPedido #resumenPedido #botones {
+  display: inline-flex;
+  justify-content: center;
+}
+#hero-hacerPedido #resumenPedido #botones button {
+  display: flex;
+  margin: 0 2rem;
+}
+#hero-hacerPedido #finalizarPedido #botones {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+#hero-hacerPedido #finalizarPedido #botones button {
+  display: flex;
+  margin: 0 2rem;
+}/*# sourceMappingURL=formalizar-pedido.component.css.map */

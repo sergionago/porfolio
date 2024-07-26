@@ -1,0 +1,10 @@
+#irAhome {
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 0.5rem 0.5rem;
+  margin-left: 2rem;
+}
+#irAhome:hover {
+  color: lightcoral;
+}/*# sourceMappingURL=home.component.css.map */

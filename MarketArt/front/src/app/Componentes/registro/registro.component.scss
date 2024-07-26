@@ -1,0 +1,50 @@
+#mensajeServer{
+    text-align: center;
+    margin:2rem 0;
+    
+    p{
+        font-size: large;
+    }
+}
+
+#registroDiv {
+    display: block;
+    text-align: center;
+
+    h2 {
+        margin-top: 1rem;
+    }
+
+    #registroForm {
+        display: inline-flex;
+        flex-direction: column;
+        border: 1px solid black;
+        margin: 0 0 1rem 0;
+        padding: 1rem;
+
+        #campos1 {
+            text-align: left;
+        }
+
+        #campos2 {
+            text-align: left;
+        }
+
+        #campos3 {
+            display: flex;
+            text-align: left;
+        }
+
+
+        label {
+            margin-right: 0.5rem;
+        }
+
+
+        input {
+            margin: 0 1rem 2rem 0;
+        }
+
+
+    }
+}

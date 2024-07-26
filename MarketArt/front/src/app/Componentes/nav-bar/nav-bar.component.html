@@ -1,0 +1,68 @@
+<!-- <nav id="navBar">
+    <ul id="listaPrincipal">
+        <li (click)="showSubMenu(1)">Joyería
+            <ul id="hijos1">
+                <li id="2">Colgantes</li>
+                <li>Pulseras</li>
+                <li>Anillos</li>
+            </ul>
+        </li>
+        <li (click)="showSubMenu(5)">Accesorios
+            <ul id="hijos5">
+                <li>Bolsos</li>
+                <li>Guantes</li>
+                <li>Sombreros</li>
+            </ul>
+        </li>
+        <li (click)="showSubMenu(9)">Artículos de papelería
+            <ul id="hijos9">
+                <li>Cuadernos</li>
+                <li>Álbumes de fotos</li>
+                <li>Calendarios</li>
+            </ul>
+        </li>
+        <li (click)="showSubMenu(13)">Decoración del Hogar
+            <ul id="hijos13">
+                <li>Cojines</li>
+                <li>Mantas</li>
+                <li>Cuadros</li>
+            </ul>
+        </li>
+        <li (click)="showSubMenu(17)">Cerámica y Alfarería
+            <ul id="hijos17">
+                <li>Platos y cuencos</li>
+                <li>Tazas y vasos</li>
+                <li>Figuras</li>
+
+            </ul>
+        </li>
+        <li (click)="showSubMenu(21)">Jardinería
+            <ul id="hijos21">
+                <li>Macetas</li>
+                <li>Herramientas</li>
+            </ul>
+        </li>
+    </ul>
+</nav> -->
+
+<nav id="navBar">
+    <app-home></app-home>
+    <ul id="listaPrincipal">
+        <li class="elementoListaPrincipal" *ngFor="let categoria of categorias" (click)="showSubMenu(categoria.id)">
+            {{categoria.nombre}}
+        </li>
+    </ul>
+    <app-user-account></app-user-account>
+    <app-shopping-cart></app-shopping-cart>
+    <div *ngFor="let categoria of categorias" id="hijos{{categoria.id}}">
+        <div>
+            <ul>
+                <li class="elementSubmenu" *ngFor="let subcategoria of categoria.subcategorias" (click)="showSelectedProducts(subcategoria.id, subcategoria.nombre)">
+                    {{subcategoria.nombre}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+ 
+</nav>

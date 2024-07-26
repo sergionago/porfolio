@@ -1,0 +1,20 @@
+<div *ngFor="let prod of producto" class="plantillaDetalle">
+    <span class="material-symbols-outlined" id="flechaRetroceso" (click)="goBack()" title="Volver">arrow_back</span>
+    <div id="imagenDiv">
+        <img src={{prod.url_imagen}}>
+    </div>
+    <aside id="infoDiv">
+        <p>{{prod.descripcion}}</p>
+        <div id="precioCarrito">
+            <p id="precio">Precio unitario: {{prod.precio_unitario}}€</p>
+            <div id="cantidadProdDetail">
+                <p>Cantidad:</p>
+                <button type="button" (click)="botonMenos(prod.id_producto)"><span class="material-symbols-outlined">remove</span></button>
+                <input type="text" value="1" class="inputDetailCantidad" id="inputDetailCantidad{{prod.id_producto}}">
+                <button type="button" (click)="botonMas(prod.id_producto)"><span class="material-symbols-outlined">add</span></button>
+            </div>
+            <button type="button" id="addCart" (click)="addCarrito(prod.id_producto, prod.nombre, prod.precio_unitario, prod.url_imagen)"><a>Añadir al carrito</a></button>
+        </div>
+    </aside>
+
+</div>

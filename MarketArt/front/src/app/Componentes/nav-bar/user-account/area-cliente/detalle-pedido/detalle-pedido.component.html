@@ -1,0 +1,12 @@
+<div id="hero-detallePedidos">
+    <div *ngFor="let articulos of pedidoArray; index as i" class="detalle">
+        <div class="imgNomb">
+            <img src="{{urlImagen[i]}}">
+            <p>{{nombre[i]}}</p>
+        </div>
+        <div class="cantPrec">
+            <p>Cantidad: {{cantidad[i]}}.</p>
+            <p>Precio: {{precioUnitario[i]}}€</p>
+        </div>
+    </div>
+</div>

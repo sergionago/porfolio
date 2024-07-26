@@ -1,0 +1,106 @@
+div#carrito {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  padding: 0.5rem 0.5rem;
+  margin: 0 2rem 0 3rem;
+  cursor: pointer;
+}
+div#carrito:hover {
+  color: lightcoral;
+}
+
+#listaCarrito {
+  display: none;
+  position: absolute;
+  background-color: black;
+  color: white;
+  border-radius: 0.7rem;
+  top: 3rem;
+  right: 1rem;
+  z-index: 999;
+}
+#listaCarrito .elementoCarrito {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  border-bottom: 1px solid white;
+}
+#listaCarrito .elementoCarrito .imagenNombre {
+  display: flex;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-items: center;
+}
+#listaCarrito .elementoCarrito .imagenNombre img {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+#listaCarrito .elementoCarrito .precioCantidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#listaCarrito .elementoCarrito .precioCantidad .cantidad {
+  display: inline-flex;
+  margin-top: -1rem;
+}
+#listaCarrito .elementoCarrito .precioCantidad .cantidad p {
+  margin: 0 0.5rem 0 0;
+}
+#listaCarrito .elementoCarrito .precioCantidad .selectorCantidad {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+#listaCarrito .elementoCarrito .precioCantidad .selectorCantidad .buttonMenos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border: 1px solid black;
+}
+#listaCarrito .elementoCarrito .precioCantidad .selectorCantidad .buttonMenos span {
+  font-size: medium;
+}
+#listaCarrito .elementoCarrito .precioCantidad .selectorCantidad .inputCantidad {
+  width: 2rem;
+  height: 1rem;
+  border: 1px solid black;
+  font-size: smaller;
+  text-align: center;
+}
+#listaCarrito .elementoCarrito .precioCantidad .selectorCantidad .buttonMas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border: 1px solid black;
+}
+#listaCarrito .elementoCarrito .precioCantidad .selectorCantidad .buttonMas span {
+  font-size: medium;
+}
+#listaCarrito #hacerPedButton {
+  margin: 1rem 0;
+  width: 12rem;
+  border-radius: 0.4rem;
+}
+#listaCarrito #hacerPedButton:hover {
+  background-color: #9a9797;
+}
+
+#listaCarrito.active {
+  display: block;
+}/*# sourceMappingURL=shopping-cart.component.css.map */

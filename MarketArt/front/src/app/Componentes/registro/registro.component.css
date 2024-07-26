@@ -1,0 +1,38 @@
+#mensajeServer {
+  text-align: center;
+  margin: 2rem 0;
+}
+#mensajeServer p {
+  font-size: large;
+}
+
+#registroDiv {
+  display: block;
+  text-align: center;
+}
+#registroDiv h2 {
+  margin-top: 1rem;
+}
+#registroDiv #registroForm {
+  display: inline-flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+}
+#registroDiv #registroForm #campos1 {
+  text-align: left;
+}
+#registroDiv #registroForm #campos2 {
+  text-align: left;
+}
+#registroDiv #registroForm #campos3 {
+  display: flex;
+  text-align: left;
+}
+#registroDiv #registroForm label {
+  margin-right: 0.5rem;
+}
+#registroDiv #registroForm input {
+  margin: 0 1rem 2rem 0;
+}/*# sourceMappingURL=registro.component.css.map */

@@ -1,0 +1,17 @@
+<h2 id="oferh2">¡Oferta de productos por menos de 10€!</h2>
+<h2 id="nombreSubCat" *ngIf="nombreSubcat.length>0">{{nombreSubcat}}:</h2>
+<div id="lista_productos">
+    <div class="producto" id="prod{{producto.id_producto}}-cat{{producto.id_categoria}}"
+        *ngFor="let producto of productos; index as i">
+
+        <img src="{{producto.url_imagen}}" (click)="goToDetail('prod'+producto.id_producto+'-'+'cat'+producto.id_categoria)" title="Ver producto en detalle">
+        <p class="nombre">{{producto.nombre}}</p>
+        <p class="precio">Precio: {{producto.precio_unitario}}€</p>
+        <div class="cantidadProd">
+            <button type="button" (click)="botonMenos(producto.id_producto)"><span class="material-symbols-outlined">remove</span></button>
+            <input type="text" value="1" class="inputCantidad" id="inputListCantidad{{producto.id_producto}}">
+            <button type="button" (click)="botonMas(producto.id_producto)"><span class="material-symbols-outlined">add</span></button>
+        </div>
+        <button type="button" class="botonCarrito" (click)="addCarrito(producto.id_producto, producto.nombre, producto.precio_unitario, producto.url_imagen)"><a>Añadir al carrito</a></button>
+    </div>
+</div>

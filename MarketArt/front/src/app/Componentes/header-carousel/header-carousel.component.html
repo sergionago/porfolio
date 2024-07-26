@@ -1,0 +1,9 @@
+<div id="carousel_header">
+    <ngb-carousel *ngIf="imagenes.length>0">
+       <ng-template ngbSlide *ngFor="let imagen of imagenes">
+        <div>
+            <img [src]="imagen" alt="Imagen carousel header">
+        </div>
+       </ng-template> 
+    </ngb-carousel>
+</div>

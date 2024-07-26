@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/styleDetails.css">
+    <script type="text/javascript" src="../js/appDetails.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"> <!--Google Fonts-->
+    <title>Detalle MarketArt</title>
+</head>
+
+<body>
+    <main>
+
+        <div id="hero-detail">
+            <aside>
+                <div id="back-button" title="Volver al porfolio">
+                    <button type="button" onclick="toPorfolio()"><span
+                            class="material-symbols-outlined">arrow_back</span></button>
+                </div>
+
+                <div id="technologies">
+                    <p>Tecnologías utilizadas:</p>
+                    <ul>
+                        <li>Angular</li>
+                        <li>Html</li>
+                        <li>Scss</li>
+                        <li>Typescript</li>
+                        <li>Node.js</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+            </aside>
+            <div id="img-and-button">
+                <div id="img-detail"><img src="../assets/images/screenshots/captura-marketart.jpg"></div>
+                <div id="to-project-detail">
+                    <button type="button">Ir al proyecto</button>
+                </div>
+            </div>
+            <aside>
+                <div id="functionalities">
+                    <p id="paragraph-functionalities" onclick="showFunctionalities()" title="Desplegar funcionalidades">
+                        Funcionalidades principales<span id="dropdown-icon" class="material-symbols-outlined">
+                            chevron_right</span></p>
+                    <div id="dropdown-functionalities" class="">
+                        <ol>
+                            <li>El usuario puede navegar entre las distintas categorías de productos.</li>
+                            <li>El usuario puede ver cada producto en detalle, así como elegir la cantidad que desea y
+                                añadirlos al carrito. </li>
+                            <li>Sistema de carrito y posibilidad de realizar pedidos.</li>
+                            <li>Sistema de registro, inicio de sesión y área de cliente.</li>
+                        </ol>
+                    </div>
+                </div>
+
+
+            </aside>
+
+
+
+        </div>
+
+    </main>
+</body>
+
+</html>

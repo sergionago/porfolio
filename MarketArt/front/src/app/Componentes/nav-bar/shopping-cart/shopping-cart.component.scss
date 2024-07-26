@@ -1,0 +1,123 @@
+div#carrito {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    padding: 0.5rem 0.5rem;
+    margin: 0 2rem 0 3rem;
+    cursor: pointer;
+
+    &:hover {
+        color: lightcoral;
+    }
+}
+
+#listaCarrito {
+    display:none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    border-radius: 0.7rem;
+    top: 3rem;
+    right: 1rem;
+    z-index: 999;
+
+    .elementoCarrito {
+        display: flex;
+        padding: 1rem;
+        flex-direction: column;
+        border-bottom: 1px solid white;
+
+        .imagenNombre {
+            display: flex;
+            height: fit-content;
+            align-items: center;
+
+            img {
+                height: 2rem;
+                width: 2rem;
+                margin-right: 1rem;
+            }
+        }
+
+        .precioCantidad {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
+
+            .cantidad {
+                display: inline-flex;
+                margin-top: -1rem;
+
+                p {
+                    margin: 0 0.5rem 0 0;
+                }
+            }
+
+            .selectorCantidad {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                .buttonMenos {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 1.5rem;
+                    height: 1rem;
+                    border-top-left-radius: 1rem;
+                    border-bottom-left-radius: 1rem;
+                    border: 1px solid black;
+
+                    span {
+                        font-size: medium;
+                    }
+
+                }
+
+                .inputCantidad {
+                    width: 2rem;
+                    height: 1rem;
+                    border: 1px solid black;
+                    font-size: smaller;
+                    text-align: center;
+                }
+
+                .buttonMas {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 1.5rem;
+                    height: 1rem;
+                    border-top-right-radius: 1rem;
+                    border-bottom-right-radius: 1rem;
+                    border: 1px solid black;
+
+                    span {
+                        font-size: medium;
+                    }
+
+                }
+            }
+        }
+
+    }
+
+    #hacerPedButton{
+        margin:1rem 0;
+        width: 12rem;
+        border-radius: 0.4rem;
+
+        &:hover{
+            background-color: #9a9797;
+        }
+    }
+
+}
+
+#listaCarrito.active {
+    display: block;
+}

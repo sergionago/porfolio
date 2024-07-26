@@ -1,0 +1,77 @@
+@use '../../styles/vars';
+
+footer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    background-color: vars.$footer-black;
+    color: white;
+    position: relative;
+
+    #footer-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+            width: 8rem;
+        }
+    }
+
+    #footer-social {
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 8rem;
+
+
+        #footer-social-icons {
+            ul {
+                display: flex;
+                list-style-type: none;
+                gap: 3rem;
+
+                i {
+                    font-size: 2rem;
+                    cursor: pointer;
+                    transition: transform 0.3s;
+
+                    &:hover {
+                        transform: scale(1.2);
+                        transition: transform 0.3s;
+                    }
+                }
+            }
+        }
+
+        #footer-social-links {
+            ul {
+                display: flex;
+                list-style-type: none;
+                gap: 3rem;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    #footer-copy {
+        grid-row: 2;
+        text-align: center;
+        border-top: 2px solid vars.$background-white;
+
+        p {
+            margin: 0;
+            padding: 0.3rem;
+        }
+    }
+}

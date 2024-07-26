@@ -1,0 +1,24 @@
+<div id="carrito" title="Carrito" (click)="showDivCesta()">
+    <span class="material-symbols-outlined">shopping_cart</span>
+</div>
+
+<div id="listaCarrito" (mouseleave)="hideDivCesta()">
+    <div *ngFor="let producto of productosCarrito" class="elementoCarrito">
+        <div class="imagenNombre">
+            <img src="{{producto.urlImagen}}">
+            <p>{{producto.nombre}}</p>
+        </div>
+        <div class="precioCantidad">
+            <p>Precio: {{producto.precio}}€</p>
+            <div class="cantidad">
+                <p>Cantidad:</p>
+                <div class="selectorCantidad">
+                    <button type="button" class="buttonMenos" (click)="botonMenos(producto.idProducto)"><span class="material-symbols-outlined">remove</span></button>
+                    <input type="text" value="{{producto.cantidad}}" class="inputCantidad" id="inputCantidad{{producto.idProducto}}">
+                    <button type="button" class="buttonMas" (click)="botonMas(producto.idProducto)"><span class="material-symbols-outlined">add</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" id="hacerPedButton" *ngIf="productosCarrito.length>0" (click)="hacerPedido()"><strong>Finalizar pedido</strong></button>
+</div>

@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Montserrat&display=swap');
+/*Josefin Slab & Montserrat*/
+
+body {
+    overflow: hidden;
+    /*Elimino el scroll para que se ajuste al comportamiento de scroll determinado por javascript*/
+}
+
+/*Initial animation*/
+/*La animación de inicio tarda 4 segundos en completarse */
+#animation-container {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    scrollbar-gutter: unset;
+}
+
+#ball-animation {
+    position: absolute;
+    top: 0;
+    left: 45.5%;
+    border-radius: 5rem;
+    width: 8rem;
+    height: 8rem;
+    background-color: black;
+    animation: ballDown 2s ease-in-out 1s infinite, fillSpace 1s ease-in-out 3s forwards;
+}
+
+@keyframes ballDown {
+
+    0% {
+        /*Inicio*/
+        top: 0;
+        left: 45.5%;
+        height: 8rem;
+        width: 8rem;
+    }
+
+    20% {
+        /*Caída*/
+        left: 48%;
+        height: 13rem;
+        width: 4rem;
+        border-radius: 50%;
+    }
+
+    50% {
+        /*Llegada al suelo*/
+        left: 41%;
+        height: 6rem;
+        width: 16rem;
+        border-radius: 50%;
+        top: 60%;
+    }
+
+    80% {
+        /*Rebote*/
+        left: 46%;
+        height: 9rem;
+        width: 7rem;
+        top: 40%;
+    }
+
+    100% {
+        /*Vuelta al suelo*/
+        left: 45.5%;
+        top: 50%;
+        height: 8rem;
+        width: 8rem;
+    }
+
+}
+
+@keyframes fillSpace {
+    0% {
+        top: 50%;
+        left: 45.5%;
+        width: 8rem;
+        height: 8rem;
+        background-color: black;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        background-color: transparent;
+    }
+}
+
+
+/*Post animation content*/
+div#hero-content {
+    opacity: 0;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+div#hero-content.active {
+    opacity: 1;
+    transition: opacity 1s ease;
+    padding: 0;
+}
+
+/*Header*/
+#header-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    font-family: 'Josefin Slab', serif;
+    background-image: linear-gradient(to right top, #1a1a1a, #1a1a1a, #1b1b1b, #1b1b1b, #1c1c1c, #222222, #282828, #2e2e2e, #3b3b3b, #494949, #575757, #666666);
+    margin-bottom: 5rem;
+}
+
+/*Dropdown menu*/
+#hero-menu {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    margin: 0;
+}
+
+#menu-button {
+    cursor: pointer;
+    position: absolute;
+    margin: 0;
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    transition: border 0.2s ease-in-out;
+}
+
+#menu-button:hover {
+    border: 1px solid white;
+    border-radius: 1rem;
+    transition: border 0.2s ease-in-out
+}
+
+#menu-button i,
+#menu-button i::before,
+#menu-button i::after {
+    position: absolute;
+    background-color: white;
+    height: 0.1rem;
+    width: 2rem;
+    transition: all 0.5s ease-in-out;
+}
+
+#menu-button i::before,
+#menu-button i::after {
+    content: '';
+}
+
+#menu-button i {
+    margin: 0;
+    top: 23px;
+    left: 8px;
+}
+
+#menu-button i::before {
+    top: -10px;
+}
+
+#menu-button i::after {
+    top: 10px;
+}
+
+#menu-button i.open {
+    transform: rotate(-90deg);
+
+}
+
+#menu-button i.open::before,
+#menu-button i.open::after {
+    top: 0px;
+}
+
+
+#menu-button i.open::before {
+    transform: rotate(45deg);
+}
+
+#menu-button i.open::after {
+    transform: rotate(-45deg);
+}
+
+#menu-list {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+#menu-list li {
+    margin: 1rem 0rem 3rem 0;
+}
+
+#menu-list li a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px white;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: border 0.3s ease;
+}
+
+#menu-list li a:hover {
+    border-bottom: 1px solid white;
+    transition: border 0.3s ease;
+}
+
+#menu-content {
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    top: 4rem;
+    left: 0rem;
+    margin: 0;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+
+#menu-content.active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/*Headers*/
+header #header-div1 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem 0 11rem !important;
+
+}
+
+header #header-div2 {
+    margin: 0 1rem 0 7rem !important;
+}
+
+
+#header-div1 #name {
+    font-size: 2.5rem;
+    border-bottom: 1px solid white;
+    width: 40%;
+    height: 3rem;
+}
+
+#header-div1 #surname {
+    font-size: 2.5rem;
+    margin-left: 6.5rem;
+    margin-top: -0.55rem;
+    border-top: 1px solid;
+    text-align: end;
+    width: 60%;
+    height: 3rem;
+}
+
+#header-div1 #job-position {
+    height: 3rem;
+}
+
+#header-div2 {
+    display: inline-flex;
+    align-items: center;
+}
+
+#header-div2 h2 {
+    margin-right: 1rem;
+}
+
+#header-div2 #code-animation-container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: 36rem;
+    height: 25rem;
+}
+
+#code-animation-container #code-animation {
+    margin: 0;
+}
+
+#code-animation-container pre {
+    overflow: hidden;
+}
+
+
+/*Projects section*/
+section.content-section {
+    width: 98vw;
+    height: 98vh;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+section[id^="projects-content"] #projects {
+    display: flex;
+    margin-top: 3rem;
+}
+
+section[id^="projects-content"] #projects img {
+    width: auto;
+    height: 13rem;
+    border: 1px solid burlywood;
+}
+
+section[id^="projects-content"] #projects div {
+    cursor: pointer;
+    margin: 0 4rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    transform: scale(1);
+    transition: transform 1s;
+}
+
+section[id^="projects-content"] #projects div:hover {
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
+section[id^="projects-content"] #projects div:hover img {
+    animation: moveImg 2s linear infinite;
+}
+
+section[id^="projects-content"] #projects div p {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    margin: 1rem auto;
+}
+
+section[id^="projects-content"] #projects div p::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: inherit;
+    background-color: rgb(255, 168, 168);
+    width: 0;
+    height: 1.2rem;
+    z-index: -1;
+    transition: width 1s ease;
+}
+
+section[id^="projects-content"] #projects div:hover p::before {
+    width: 100%;
+    transition: width 1s ease;
+}
+
+section[id^="projects-content"] #projects div#project-marketart:hover p::before {
+    width: 19.2rem;
+    transition: width 1s ease;
+}
+
+@keyframes moveImg {
+    0% {
+        transform: rotateZ(-1deg);
+    }
+
+    50% {
+        transform: rotateZ(1deg);
+    }
+
+    100% {
+        transform: rotateZ(-1deg);
+    }
+
+}
+
+/*Tech section*/
+#tech-content #container-tech {
+    display: grid;
+    margin-top: 8rem;
+    grid-template-columns: 1.5fr 1fr 1fr;
+}
+
+#tech-content #container-tech p {
+    background-color: gainsboro;
+}
+
+#tech-content #container-tech div {
+    display: table;
+    margin: 1rem 4rem;
+    padding: 1rem;
+
+}
+
+#tech-content #container-tech div i img {
+    margin: 1rem 2rem;
+    filter: grayscale(90%);
+
+}
+
+#tech-content #container-tech div i img:hover {
+    filter: grayscale(0%);
+}
+
+#tech-content i .techIcon {
+    height: 4rem;
+    width: auto;
+}
+
+/*Contact section*/
+#contact-content #contact-elements {
+    margin-top: 5rem;
+}
+
+#contact-content #li-icon {
+    width: 5rem;
+    height: 1.5rem;
+    margin-left: 0.5rem;
+    padding-bottom: 0.2rem;
+}
+
+#contact-content p {
+    display: flex;
+    position: relative;
+    margin-bottom: 2rem;
+    z-index: 5;
+}
+
+#contact-content p::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.5rem;
+    width: 0;
+    background-color: lightcoral;
+    z-index: -1;
+}
+
+#contact-content p:hover {
+    animation: whiteColor 0.1s linear 0.9s forwards;
+}
+
+@keyframes whiteColor {
+    0% {
+        color: black;
+    }
+
+    100% {
+        color: white;
+    }
+}
+
+#contact-content p:hover::after {
+    content: '';
+    width: 100%;
+    animation: marker 1s ease-in-out;
+}
+
+@keyframes marker {
+    0% {
+        left: 0;
+        width: 0;
+    }
+
+    30% {
+        left: 0;
+        width: 100%;
+    }
+
+    60% {
+        right: 0;
+        left: 100%;
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+#contact-content p span {
+    margin-right: 0.3rem;
+}

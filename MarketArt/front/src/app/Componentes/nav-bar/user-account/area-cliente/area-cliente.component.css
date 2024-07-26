@@ -1,0 +1,83 @@
+#heroAreaCliente {
+  display: flex;
+  align-items: center;
+}
+#heroAreaCliente #navAreaCliente {
+  margin: 2rem 5rem 1rem 1rem;
+  padding: 1rem;
+}
+#heroAreaCliente #navAreaCliente #listaTabs {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#heroAreaCliente #navAreaCliente #listaTabs li {
+  border: 1px solid black;
+  cursor: pointer;
+  border-collapse: collapse;
+  padding: 1rem;
+}
+#heroAreaCliente #navAreaCliente #listaTabs li:hover {
+  background-color: lightgrey;
+}
+#heroAreaCliente #contenido {
+  display: flex;
+  justify-content: center;
+}
+#heroAreaCliente #perfilContent h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#heroAreaCliente #perfilContent label {
+  width: 10rem;
+}
+#heroAreaCliente #perfilContent input {
+  margin-right: 1rem;
+}
+#heroAreaCliente #perfilContent #botonLogOut {
+  margin-top: 2rem;
+  text-align: center;
+}
+#heroAreaCliente #perfilContent #botonLogOut button {
+  border-radius: 0.5rem;
+  width: 20rem;
+}
+#heroAreaCliente #perfilContent #botonLogOut button:hover {
+  background-color: lightcoral;
+}
+#heroAreaCliente #pedidosContent #contenidoPedidos {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+#heroAreaCliente #pedidosContent #contenidoPedidos .pedido {
+  display: block;
+  align-items: center;
+  border: 1px solid slategrey;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+#heroAreaCliente #pedidosContent #contenidoPedidos .pedido p {
+  margin: 0 0.5rem;
+}
+#heroAreaCliente #pedidosContent #contenidoPedidos .pedido .detallePedButton {
+  display: flex;
+  border: 1px solid transparent;
+  margin-top: 0.5rem;
+  font-size: small;
+}
+#heroAreaCliente #pedidosContent #contenidoPedidos .pedido .detallePedButton:hover {
+  border: 1px solid lightgrey;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}/*# sourceMappingURL=area-cliente.component.css.map */

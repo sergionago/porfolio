@@ -1,0 +1,109 @@
+.plantillaDetalle {
+  display: inline-flex;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 3rem 10rem;
+}
+.plantillaDetalle #flechaRetroceso {
+  margin-right: 10rem;
+  border: 1px solid black;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: transform 800ms;
+}
+.plantillaDetalle #flechaRetroceso:hover {
+  border-color: red;
+  transform: rotate(360deg);
+  transition: transform 800ms;
+}
+.plantillaDetalle #imagenDiv {
+  display: flex;
+  align-items: center;
+  margin: 1rem 3rem 1rem 0;
+}
+.plantillaDetalle #imagenDiv img {
+  width: 20rem;
+  height: 20rem;
+  border: 2px solid red;
+  border-radius: 1rem;
+}
+.plantillaDetalle #infoDiv {
+  margin: 2rem;
+  width: 30%;
+}
+.plantillaDetalle #infoDiv #precioCarrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 15%;
+}
+.plantillaDetalle #infoDiv #precioCarrito #precio {
+  font-size: larger;
+  border: 2px solid red;
+  padding: 0.2rem 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.plantillaDetalle #infoDiv #precioCarrito #cantidadProdDetail {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.plantillaDetalle #infoDiv #precioCarrito #cantidadProdDetail p {
+  margin: 0 1rem 0 0;
+}
+.plantillaDetalle #infoDiv #precioCarrito #cantidadProdDetail button {
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+}
+.plantillaDetalle #infoDiv #precioCarrito #cantidadProdDetail button:hover {
+  border: 1px solid red;
+}
+.plantillaDetalle #infoDiv #precioCarrito #cantidadProdDetail .inputDetailCantidad {
+  width: 2rem;
+  text-align: center;
+  margin: 0 1rem;
+}
+.plantillaDetalle #infoDiv #precioCarrito #addCart {
+  border-radius: 1rem;
+  position: relative;
+  width: 20rem;
+  height: 2.5rem;
+  background-color: black;
+  padding: 0;
+  border: 0;
+  z-index: 0;
+}
+.plantillaDetalle #infoDiv #precioCarrito #addCart a {
+  position: absolute;
+  top: 16%;
+  left: 33%;
+  color: white;
+  z-index: 2;
+}
+.plantillaDetalle #infoDiv #precioCarrito #addCart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  border-radius: 1rem;
+  border-width: 2px;
+  background-color: red;
+  transition: height 800ms;
+  z-index: 1;
+}
+.plantillaDetalle #infoDiv #precioCarrito #addCart:hover::after {
+  content: "";
+  height: 100%;
+}/*# sourceMappingURL=product-detail.component.css.map */

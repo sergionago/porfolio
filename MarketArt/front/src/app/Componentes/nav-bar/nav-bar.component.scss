@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&family=Roboto:wght@100;400&display=swap');
+
+#navBar{
+    display: inline-block;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    position:sticky;
+    width: 100%;
+    color: white;
+    background-color: black;
+    z-index: 999;
+
+    >div{
+        display: none;
+        width:100%;
+        background-color: black;
+        color: white;
+    }
+
+    >div.active{
+        display: block;
+    }
+
+    #listaPrincipal{
+        display: inline-flex;
+        list-style-type: none;
+        margin:1rem 0;
+
+        > li{
+            margin:0 2rem;
+            cursor: pointer;
+            position: relative; 
+        }
+
+        .elementoListaPrincipal{
+            box-shadow: 0 0.1rem transparent;
+            transition: box-shadow 0.2s ease-in, color 0.3s ease-in-out;
+        }
+        .elementoListaPrincipal:hover{
+            box-shadow: 0 0.1rem lightcoral;
+            color: lightcoral;
+            transition: box-shadow 0.3s ease-in, color 0.3s ease-in-out;
+        }
+ 
+    }
+
+    li.elementSubmenu{
+        cursor:pointer;
+        width:fit-content;
+
+        &:hover{
+            color: lightsalmon;
+        }
+    }
+
+}

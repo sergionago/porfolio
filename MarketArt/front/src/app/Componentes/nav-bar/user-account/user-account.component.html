@@ -1,0 +1,29 @@
+<div id="usuario" title="Usuario" (click)="showDivForm()">
+    <span class="material-symbols-outlined">person</span>
+</div>
+
+<ng-template #sesionNoIniciada>
+    <div id="login_div" (mouseleave)="hideDivForm()">
+        <form (ngSubmit)="onLogin()" id="login_form" method="POST" target="_blank">
+            <div id="campos">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" [(ngModel)]="correo">
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="password" [(ngModel)]="pass">
+            </div>
+            <div id="botones">
+                <button type="submit">Iniciar sesión</button>
+                <button type="button" (click)="irAregistro()">Registrarse</button>
+            </div>
+        </form>
+        <div id="mensajeLogin" *ngIf="mensaje_servidor.length>0">
+            <p>{{mensaje_servidor}}</p>
+        </div>
+    </div>
+</ng-template>
+
+<div *ngIf="sesionIniciada; else sesionNoIniciada" id="sesionIniciadaDiv" (mouseleave)="hideDivForm()">
+    <p>Hola, {{nombreUsuario}}</p>
+    <p (click)="irAreaClientes()" id="customerArea">Área de Clientes</p>
+    <button type="button" (click)="logOut()">Cerrar Sesión</button>
+</div>

@@ -1,0 +1,85 @@
+div#usuario {
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 0.5rem 0.5rem;
+  margin-left: 2rem;
+}
+div#usuario:hover {
+  color: lightcoral;
+}
+
+#login_div {
+  display: none;
+}
+
+#login_div.active {
+  display: block;
+  font-size: small;
+  position: absolute;
+  left: 81.2%;
+  top: 2.7rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 9.1rem;
+  background-color: black;
+}
+
+#mensajeLogin {
+  background-color: black;
+}
+
+#login_form div#campos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#login_form div#botones {
+  display: inline-block;
+}
+#login_form div#botones button {
+  margin: 0.2rem 0.2rem;
+}
+#login_form input {
+  margin: 0 1rem 0.7rem;
+  font-size: small;
+}
+#login_form button {
+  margin-bottom: 1rem;
+}
+#login_form p {
+  font-size: small;
+  margin-bottom: 0.2rem;
+}
+
+#sesionIniciadaDiv {
+  display: none;
+}
+
+#sesionIniciadaDiv.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 83%;
+  top: 2.7rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 9rem;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  z-index: 9999;
+}
+#sesionIniciadaDiv.active #customerArea {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+#sesionIniciadaDiv.active #customerArea:hover {
+  box-shadow: 0 0.05rem 0 white;
+}
+#sesionIniciadaDiv.active button {
+  border-radius: 0.8rem;
+}
+#sesionIniciadaDiv.active button:hover {
+  background-color: lightcoral;
+}/*# sourceMappingURL=user-account.component.css.map */

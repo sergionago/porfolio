@@ -1,0 +1,58 @@
+<div id="heroAreaCliente">
+    <aside>
+        <nav id="navAreaCliente">
+            <ul id="listaTabs">
+                <li id="perfilTab" (click)="showTab('perfilContent')" (click)="irAcuenta()">Perfil</li>
+                <li id="pedidosTab" (click)="showTab('pedidosContent')" (click)="getPedidos()">Pedidos</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="contenido">
+        <div class="content active" id="perfilContent">
+            <div id="contenidoPerfil">
+                <h2>Ajustes e información de la cuenta</h2>
+                <div>
+                    <label for="nomb">Nombre:</label>
+                    <input type="text" id="nomb" value="{{nombre}}">
+                    <label for="primAp">Primer apellido:</label>
+                    <input type="text" id="primAp" value="{{primerAp}}">
+                    <label for="segAp">Segundo apellido:</label>
+                    <input type="text" id="segAp" value="{{segundoAp}}">
+                </div>
+                <div>
+                    <label for="email">Email actual:</label>
+                    <input type="text" id="email" value="{{email}}">
+                    <label for="cambEmail">Cambiar email:</label>
+                    <input type="text" id="cambEmail">
+                </div>
+                <div>
+                    <label for="telef">Teléfono actual:</label>
+                    <input type="tel" id="telef" value="{{telefono}}">
+                    <label for="cambTelef">Cambiar teléfono:</label>
+                    <input type="text" id="cambTelef">
+                </div>
+                <div>
+                    <label for="cambPass">Cambiar contraseña:</label>
+                    <input type="password" id="cambPass">
+                </div>
+                <div id="botonLogOut">
+                    <button type="button" (click)="logOut()">Cerrar sesión</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="pedidosContent">
+            <div id="contenidoPedidos">
+                <div *ngFor="let pedido of pedidosArray; index as i" class="pedido">
+                    <strong><p class="nombrePed">Pedido {{i+1}}.</p></strong>
+                    <p class="fechaPed">Fecha: {{pedido.fecha}} </p>
+                    <p class="fechaPed">Hora: {{pedido.hora}}</p>
+                    <p class="totalPed">TOTAL: {{pedido.gasto_total}}€</p>
+                    <button type="button" class="detallePedButton" title="Ver pedido" (click)="irAdetalle(pedido.id_pedido)">Detalle del pedido<span class="material-symbols-outlined">chevron_right</span></button>
+                </div>
+            </div>
+            <router-outlet name="detallePedido" *ngIf="mostrarDetalle"></router-outlet>
+        </div>
+    </div>
+</div>
