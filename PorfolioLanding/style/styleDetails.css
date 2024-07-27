@@ -112,6 +112,12 @@ main {
     transition: width 500ms ease-in-out;
 }
 
+#img-and-button #deployed-project {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
 /*Asides*/
 aside>div {
     position: relative;
@@ -130,22 +136,11 @@ aside>div::before {
     z-index: -1;
 }
 
-aside>div:not(#functionalities)::after {
+aside>div::after {
     content: "";
     position: absolute;
-    top: 68%;
-    left: 56%;
-    height: 5rem;
-    width: 5rem;
-    background-color: lightcoral;
-    z-index: -1;
-}
-
-aside>div#functionalities::after {
-    content: "";
-    position: absolute;
-    top: 71%;
-    left: 85%;
+    bottom: -0.5rem;
+    right: -0.5rem;
     height: 5rem;
     width: 5rem;
     background-color: lightcoral;

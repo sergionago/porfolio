@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("ball-animation").scrollIntoView({ behavior: "smooth" });
+
+    setTimeout(() => { //Retardo para esperar a aplicar las funciones cuando finalice la animación de inicio
+        showContent();
+        writeCodeAnimation();
+        setupScrolling();
+    }, 4000);
+});
 
 async function writeCodeAnimation() {
 
@@ -39,7 +48,6 @@ async function write(char) {
     })
 }
 
-
 function showContent() {
     const divToShow = document.getElementById("hero-content");
     const divToHide = document.getElementById("animation-container");
@@ -73,16 +81,6 @@ function setupScrolling() {
     }, { passive: false });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("ball-animation").scrollIntoView({ behavior: "smooth" });
-
-    setTimeout(() => { //Retardo para esperar a aplicar las funciones cuando finalice la animación de inicio
-        showContent();
-        writeCodeAnimation();
-        setupScrolling();
-    }, 4000);
-});
-
 function showMenu() {
     const menuContent = document.getElementById("menu-content");
     const menuBars = document.getElementById("menu-bars");
@@ -104,22 +102,6 @@ function showMenu() {
 
 }
 
-
-function toDetail(idProject) {
-
-    switch (idProject) {
-        case 'project-gesgas':
-            window.open('./views/detalleProyectoGesgas.html', '_blank');
-            break;
-
-        case 'project-marketart':
-            window.open('./views/detalleProyectoMarketArt.html', '_blank');
-            break;
-    }
-}
-
-
-
 async function mixChars(idElement, originalString) {
     const mixElement = document.getElementById(idElement);
     const originalText = originalString;
@@ -135,14 +117,10 @@ async function mixChars(idElement, originalString) {
         index--;
     }
 
-
     setTimeout(() => {
         mixElement.innerText = originalText;
     }, 35);
-
-
 }
-
 
 async function writeMixedChar(idElement, charToWrite) {
     const mixElement = document.getElementById(idElement);
@@ -155,8 +133,6 @@ async function writeMixedChar(idElement, charToWrite) {
             resolve();
         }, 35);
     });
-
-
 }
 
 function debounce(fn){

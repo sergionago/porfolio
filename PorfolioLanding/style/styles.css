@@ -335,6 +335,11 @@ section[id^="projects-content"] #projects div:hover img {
     animation: moveImg 2s linear infinite;
 }
 
+section[id^="projects-content"] #projects div>a {
+    text-decoration: none;
+    color: black;
+}
+
 section[id^="projects-content"] #projects div p {
     position: relative;
     z-index: 1;
@@ -382,8 +387,8 @@ section[id^="projects-content"] #projects div#project-marketart:hover p::before 
 /*Tech section*/
 #tech-content #container-tech {
     display: grid;
-    margin-top: 8rem;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    margin-top: 6rem;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
 }
 
 #tech-content #container-tech p {
