@@ -388,18 +388,17 @@ section[id^="projects-content"] #projects div#project-marketart:hover p::before 
 #tech-content #container-tech {
     display: grid;
     margin-top: 6rem;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 4rem;
 }
 
 #tech-content #container-tech p {
     background-color: gainsboro;
 }
 
-#tech-content #container-tech div {
-    display: table;
-    margin: 1rem 4rem;
-    padding: 1rem;
-
+#tech-content #container-tech>div>div {
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 #tech-content #container-tech div i img {
