@@ -1,12 +1,11 @@
 'use client'
 import { getRecipe, updateRecipe } from "@/app/services/recipeService";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Page() {
-    const searchParams = useSearchParams();
     const router = useRouter();
     const [serverResponse, setServerResponse] = useState('');
     const [recipeData, setRecipeData] = useState({
@@ -32,7 +31,9 @@ export default function Page() {
     const SERVER_URI = process.env.SERVER_URI;
 
     useEffect(() => {
-        const recipeId = searchParams.get('recipeId');
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const recipeId = urlParams.get('recipeId');
         if (recipeId) getRecipeData(recipeId);
     }, [])
 

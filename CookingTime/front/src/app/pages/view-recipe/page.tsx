@@ -1,12 +1,11 @@
 'use client'
-import { useRouter, useSearchParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react";
 import { getRecipe } from "@/app/services/recipeService";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Page() {
-    const searchParams = useSearchParams();
     const router = useRouter();
     const SERVER_URI = process.env.SERVER_URI;
     const [recipeData, setRecipeData] = useState({
@@ -30,7 +29,9 @@ export default function Page() {
     });
 
     useEffect(() => {
-        const recipeId = searchParams.get('recipeId');
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const recipeId = urlParams.get('recipeId');
         if (recipeId) getRecipeData(recipeId);
     }, []);
 
@@ -70,10 +71,10 @@ export default function Page() {
                             <ul className="ingredients">
                                 {recipeData.ingredients.map((ingredient) => (
                                     <li key={ingredient.id} className="flex items-center place-content-start my-2 ingredient gap-1">
-                                        <input type="text" readOnly placeholder="Producto" className="w-1/3 border-b-2 border-support-gray outline-none" value={ingredient.product}/>
+                                        <input type="text" readOnly placeholder="Producto" className="w-1/3 border-b-2 border-support-gray outline-none" value={ingredient.product} />
                                         <p>:</p>
-                                        <input type="text" readOnly placeholder="Cantidad" className="w-1/3 border-b-2 border-support-gray outline-none" value={ingredient.quantity}/>
-                                        <input type="text" readOnly placeholder="Unidad" className="w-1/3 border-b-2 border-support-gray outline-none" value={ingredient.unit}/>
+                                        <input type="text" readOnly placeholder="Cantidad" className="w-1/3 border-b-2 border-support-gray outline-none" value={ingredient.quantity} />
+                                        <input type="text" readOnly placeholder="Unidad" className="w-1/3 border-b-2 border-support-gray outline-none" value={ingredient.unit} />
                                     </li>
                                 ))}
                             </ul>
