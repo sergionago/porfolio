@@ -64,6 +64,7 @@ export default function Page() {
                                 height={100}
                                 priority
                                 style={{ width: 'auto', height: 'auto' }}
+                                unoptimized={true}
                             />
                         </div>
                         <div className="border-2 border-black p-3">
@@ -114,6 +115,7 @@ export default function Page() {
                                         height={100}
                                         priority
                                         style={{ justifySelf: 'end', width: 'auto', height: 'auto' }}
+                                        unoptimized={true}
                                     />
                                 </div>
                                 :
@@ -125,6 +127,7 @@ export default function Page() {
                                         height={100}
                                         priority
                                         style={{ justifySelf: 'start', width: 'auto', height: 'auto' }}
+                                        unoptimized={true}
                                     />
                                     <p className="p-4">{step.description}</p>
                                 </div>
