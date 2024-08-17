@@ -12,7 +12,7 @@ const nextConfig = {
     SERVER_URI: process.env.SERVER_URI,
   },
   images: {
-    domains: ['localhost']
+    domains: ['localhost','https://cookingtime-back.onrender.com']
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production"
