@@ -1,0 +1,43 @@
+{
+    "name": "CookingTime",
+    "short_name": "CT",
+    "theme_color": "#FFAA2A",
+    "background_color": "#9EFFA6",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "icons/logo-48x48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/logo-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/logo-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/logo-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/logo-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/logo-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+
+    ]
+}

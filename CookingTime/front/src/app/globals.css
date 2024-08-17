@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body:not(:has(main.loginPage)) {
+    background-image: url('../../public/images/new-recipe-bg.jpg');
+    background-repeat: repeat;
+    object-fit: cover;
+    background-size: cover;
+}
