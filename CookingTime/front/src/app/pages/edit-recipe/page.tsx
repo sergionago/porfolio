@@ -120,7 +120,7 @@ export default function Page() {
                                 height={100}
                                 priority
                                 style={{ height: 'auto', width: 'auto' }}
-                                unoptimized={true}
+                                // unoptimized={true}
                             />
                         </div>
                         <div className="border-2 border-black p-3">
@@ -164,7 +164,7 @@ export default function Page() {
                                         height={100}
                                         style={{ justifySelf: 'end', height: 'auto', width: 'auto' }}
                                         priority
-                                        unoptimized={true}
+                                        // unoptimized={true}
                                     />
                                 </div>
                                 :
@@ -176,7 +176,7 @@ export default function Page() {
                                         height={100}
                                         style={{ justifySelf: 'start', height: 'auto', width: 'auto' }}
                                         priority
-                                        unoptimized={true}
+                                        // unoptimized={true}
                                     />
                                     <textarea name="description" cols={50} rows={5} placeholder="Step description" onChange={handleStepChange} value={step.description} className="m-auto p-4 w-full"></textarea>
                                 </div>}
