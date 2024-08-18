@@ -12,7 +12,7 @@ const nextConfig = {
     SERVER_URI: process.env.SERVER_URI,
   },
   images: {
-    domains: ['localhost','porfolio-omega-red.vercel.app']
+    domains: ['localhost', 'cookingtime-back.onrender.com']
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production"
