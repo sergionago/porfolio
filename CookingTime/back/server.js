@@ -13,7 +13,7 @@ app.use(express.json());
 //CORS
 app.use(cors());
 const corsOptions = {
-    origin: process.env.CLIENT_URI,
+    origin: ['http://localhost:3000','https://porfolio-omega-red.vercel.app'],
     optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));

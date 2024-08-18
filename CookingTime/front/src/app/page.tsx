@@ -63,7 +63,6 @@ export default function Home() {
         alt="Background Image"
         fill
         style={{ opacity: '0.4', zIndex: '-1' }}
-        // unoptimized={true}
       />
 
       <section className="bg-blue-400 rounded w-[40%] py-5 flex place-content-center items-center shadow-black shadow">
