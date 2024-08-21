@@ -1,7 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Montserrat&display=swap');
 /*Josefin Slab & Montserrat*/
 
-body {
+body.overflowed {
     overflow: hidden;
     /*Elimino el scroll para que se ajuste al comportamiento de scroll determinado por javascript*/
 }
@@ -19,7 +23,8 @@ body {
 #ball-animation {
     position: absolute;
     top: 0;
-    left: 45.5%;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 5rem;
     width: 8rem;
     height: 8rem;
@@ -32,14 +37,12 @@ body {
     0% {
         /*Inicio*/
         top: 0;
-        left: 45.5%;
         height: 8rem;
         width: 8rem;
     }
 
     20% {
         /*Caída*/
-        left: 48%;
         height: 13rem;
         width: 4rem;
         border-radius: 50%;
@@ -47,7 +50,6 @@ body {
 
     50% {
         /*Llegada al suelo*/
-        left: 41%;
         height: 6rem;
         width: 16rem;
         border-radius: 50%;
@@ -56,7 +58,6 @@ body {
 
     80% {
         /*Rebote*/
-        left: 46%;
         height: 9rem;
         width: 7rem;
         top: 40%;
@@ -64,7 +65,6 @@ body {
 
     100% {
         /*Vuelta al suelo*/
-        left: 45.5%;
         top: 50%;
         height: 8rem;
         width: 8rem;
@@ -75,7 +75,6 @@ body {
 @keyframes fillSpace {
     0% {
         top: 50%;
-        left: 45.5%;
         width: 8rem;
         height: 8rem;
         background-color: black;
@@ -83,7 +82,7 @@ body {
 
     100% {
         top: 0;
-        left: 0;
+        right: 0;
         width: 100vw;
         height: 100vh;
         border-radius: 0;
@@ -107,11 +106,9 @@ div#hero-content.active {
 
 /*Header*/
 #header-element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    width: 100%;
+    padding: 1rem;
+    width: 100vw;
     height: 100vh;
     color: white;
     font-family: 'Josefin Slab', serif;
@@ -183,7 +180,6 @@ div#hero-content.active {
     top: 0px;
 }
 
-
 #menu-button i.open::before {
     transform: rotate(45deg);
 }
@@ -226,9 +222,8 @@ div#hero-content.active {
     border: 1px solid white;
     border-radius: 0.5rem;
     transition: opacity 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.8);
 }
-
-
 
 #menu-content.active {
     opacity: 1;
@@ -239,103 +234,100 @@ div#hero-content.active {
 header #header-div1 {
     display: flex;
     flex-direction: column;
-    margin: 0 1rem 0 11rem !important;
-
+    width: fit-content;
 }
 
-header #header-div2 {
-    margin: 0 1rem 0 7rem !important;
+header #header-div1>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto 1fr;
 }
-
 
 #header-div1 #name {
+    grid-column: 1;
+    grid-row: 1;
     font-size: 2.5rem;
-    border-bottom: 1px solid white;
-    width: 40%;
-    height: 3rem;
+    width: 7rem;
+    height: 3.5rem;
 }
 
 #header-div1 #surname {
+    grid-column: 2;
+    grid-row: 3;
     font-size: 2.5rem;
-    margin-left: 6.5rem;
-    margin-top: -0.55rem;
-    border-top: 1px solid;
-    text-align: end;
-    width: 60%;
-    height: 3rem;
+    width: 7rem;
+    height: 3.5rem;
+}
+
+#header-div1 #job-position {
+    text-align: center;
+}
+
+#header-div1 hr {
+    grid-row: 2;
+    width: 100%;
 }
 
 #header-div1 #job-position {
     height: 3rem;
 }
 
-#header-div2 {
-    display: inline-flex;
-    align-items: center;
+h2 {
+    font-size: 1.7rem;
 }
-
-#header-div2 h2 {
-    margin-right: 1rem;
-}
-
-#header-div2 #code-animation-container {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    width: 36rem;
-    height: 25rem;
-}
-
-#code-animation-container #code-animation {
-    margin: 0;
-}
-
-#code-animation-container pre {
-    overflow: hidden;
-}
-
 
 /*Projects section*/
 section.content-section {
-    width: 98vw;
-    height: 98vh;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
+    width: 100vw;
+    height: 100vh;
     text-align: center;
-    margin-bottom: 10rem;
+    padding: 1rem 0;
+}
+
+section.content-section:not(#tech-content) {
+    padding: 1rem 2rem;
 }
 
 section[id^="projects-content"] #projects {
-    display: flex;
-    margin-top: 3rem;
+    gap: 2rem;
 }
 
 section[id^="projects-content"] #projects img {
     width: auto;
-    height: 13rem;
     border: 1px solid burlywood;
 }
 
-section[id^="projects-content"] #projects div {
+section[id^="projects-content"] #projects>div {
     cursor: pointer;
-    margin: 0 4rem;
     border: 1px solid black;
     border-radius: 1rem;
     transform: scale(1);
     transition: transform 1s;
 }
 
-section[id^="projects-content"] #projects div:hover {
+section[id^="projects-content"] #projects>div:hover {
     transform: scale(1.1);
     transition: transform 1s;
 }
 
-section[id^="projects-content"] #projects div:hover img {
+section[id^="projects-content"] #projects>div h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+section[id^="projects-content"] #projects>div img {
+    border-radius: 0.2rem;
+    width: 95%;
+}
+
+section[id^="projects-content"] #projects>div:hover img {
     animation: moveImg 2s linear infinite;
 }
 
 section[id^="projects-content"] #projects div>a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
     color: black;
 }
@@ -385,11 +377,66 @@ section[id^="projects-content"] #projects div#project-marketart:hover p::before 
 }
 
 /*Tech section*/
-#tech-content #container-tech {
+#tech-content.content-section {
     display: grid;
-    margin-top: 6rem;
-    grid-template-columns: auto auto auto auto;
-    column-gap: 4rem;
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-template-rows: 10% 90%;
+    overflow-x: hidden;
+}
+
+#tech-content.content-section>h2 {
+    grid-row: 1;
+    grid-column: 1/4;
+}
+
+#tech-content>div:has(button) {
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    z-index: 50;
+}
+
+#tech-content>div>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(195, 195, 195, 0.5);
+    border: 1px solid gray;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#tech-content>div>button:hover {
+    color: rgb(255, 31, 31);
+}
+
+#tech-content>div>button.inactive {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+#tech-content>div>button>span {
+    font-size: 2.5rem;
+    margin: auto;
+}
+
+#tech-content .carousel-container {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+#tech-content .carousel-container .carousel-item {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+#tech-content .carousel-container .carousel-item>p {
+    font-size: 1.2rem;
 }
 
 #tech-content #container-tech p {
@@ -399,6 +446,8 @@ section[id^="projects-content"] #projects div#project-marketart:hover p::before 
 #tech-content #container-tech>div>div {
     display: grid;
     grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    justify-items: baseline;
 }
 
 #tech-content #container-tech div i img {
@@ -407,7 +456,8 @@ section[id^="projects-content"] #projects div#project-marketart:hover p::before 
     transform: scale(0.8);
 }
 
-#tech-content #container-tech div i img:hover {
+#tech-content #container-tech div i img:hover,
+#tech-content #container-tech .techGroup:has(.progressBar:hover)>i>img {
     filter: grayscale(0%);
 }
 
@@ -416,7 +466,65 @@ section[id^="projects-content"] #projects div#project-marketart:hover p::before 
     width: auto;
 }
 
+#tech-content #container-tech>div>div .techGroup {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+#tech-content #container-tech>div>div .techGroup .progressBar {
+    display: flex;
+    align-items: center;
+    height: 15%;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 1rem;
+    overflow-x: clip;
+}
+
+#tech-content #container-tech>div>div .techGroup .progressBar:hover {
+    box-shadow: 0px 0px 2px 2px rgb(248, 108, 108);
+}
+
+#tech-content #container-tech>div>div .techGroup .progressBar span:first-of-type {
+    display: block;
+    height: 100%;
+    background-color: rgb(49, 201, 49);
+    border-radius: 1rem;
+    width: 40%;
+}
+
+#tech-content #container-tech>div>div .techGroup .progressBar span:last-of-type {
+    margin-left: -0.3rem;
+    cursor: default;
+}
+
+#tech-content #container-tech>div>div .techGroup .progressBar span.theory {
+    width: 40%;
+}
+
+#tech-content #container-tech>div>div .techGroup .progressBar span.theoreticalPractical {
+    width: 60%;
+}
+
+#tech-content #container-tech>div>div .techGroup .progressBar span.remarkable {
+    width: 80%;
+}
+
+#tech-content #container-tech>div>div .techGroup .progressBar span.excellent {
+    width: 100%;
+}
+
 /*Contact section*/
+#contact-content.content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #contact-content #contact-elements {
     margin-top: 5rem;
 }

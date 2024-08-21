@@ -4,79 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/styles.css">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./styles/globalOutput.css">
     <script type="text/javascript" src="./js/app.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <!--Google Icons-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!--Bootstrap 5-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <!--Bootstrap 5-->
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <!--Prism.js, para establecer el color de las etiquetas html en la animación del header-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"> <!--Prism.js-->
     <title>Porfolio Sergio Navarro</title>
 </head>
 
-<body>
-    <div id="animation-container">
+<body class="overflowed">
+    <div id="animation-container" class="w-screen h-screen">
         <div id="ball-animation"></div>
     </div>
 
-    <div class="container-fluid" id="hero-content">
-        <header id="header-element" class="container-fluid content-section">
-            <div id="hero-menu">
-                <div id="menu-button" onclick="showMenu()"><i id="menu-bars"></i></div>
+    <div class="w-screen h-screen" id="hero-content">
+        <header id="header-element" class="content-section">
+            <section id="hero-menu">
+                <div id="menu-button"><i id="menu-bars"></i></div>
                 <div id="menu-content">
                     <ul id="menu-list">
-                        <li><a onclick="toSection('projects-content')">Proyectos</a></li>
-                        <li><a onclick="toSection('tech-content')">Tecnologías</a></li>
-                        <li><a onclick="toSection('contact-content')">Contacto</a></li>
+                        <li><a data-target="projects-content">Proyectos</a></li>
+                        <li><a data-target="tech-content">Tecnologías</a></li>
+                        <li><a data-target="contact-content">Contacto</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="container" id="header-div1">
-                <h1 id="name" onmouseenter="mixChars('name', 'Sergio')">Sergio</h1>
-                <h1 id="surname" onmouseenter="mixChars('surname', 'Navarro')">Navarro</h1>
-                <h2 class="text-center" id="job-position" onmouseenter="mixChars('job-position', 'Desarrollador Web')">
-                    Desarrollador Web</h2>
-            </div>
-            <div class="container" id="header-div2">
-                <h2>Porfolio</h2>
-                <div id="code-animation-container">
-                    <pre><code id="code-animation" class="languaje-html"></code></pre>
+            </section>
+            <section class="flex flex-col items-center h-full w-full lg:flex-row lg:items-center justify-around">
+                <div id="header-div1">
+                    <div>
+                        <h1 id="name" class="mixLetters">Sergio</h1>
+                        <hr class="col-span-2">
+                        <h1 id="surname" class="mixLetters">Navarro</h1>
+                    </div>
+                    <h2 id="job-position" class="mixLetters">Desarrollador Web</h2>
                 </div>
-            </div>
+                <div id="header-div2">
+                    <div id="code-animation-container">
+                        <pre><code id="code-animation" class="languaje-html"></code></pre>
+                    </div>
+                </div>
+            </section>
         </header>
 
         <main>
-            <section id="projects-content" class="container-fluid content-section">
+            <section id="projects-content"
+                class="content-section grid grid-cols-[auto] grid-rows-[10%_90%] items-center">
                 <h2>Mis proyectos</h2>
-                <div id="projects" class="container-fluid">
+                <div id="projects"
+                    class="grid grid-cols-[auto_auto] grid-rows-[auto_auto] justify-items-center md:grid-cols-[1fr_1fr_1fr] md:grid-rows-[auto]">
 
-                    <div id="project-hostheaven" class="container" title="Ir a detalle">
+                    <div id="project-hostheaven" title="Ir a detalle">
                         <a href="./views/detalleProyectoHHeaven.html" target="_blank">
                             <h3>HostHeaven</h3>
-                            <img src="./assets/images/screenshots/captura-hostheaven.png" class="rounded img-fluid"
-                                alt="Captura">
+                            <img src="./assets/images/screenshots/captura-hostheaven.png" alt="Captura">
                             <p>Web de servicios de hosting</p>
                         </a>
                     </div>
 
-                    <div id="project-gesgas" class="container" title="Ir a detalle">
+                    <div id="project-gesgas" title="Ir a detalle">
                         <a href="./views/detalleProyectoGesgas.html" target="_blank">
                             <h3>GesGas</h3>
-                            <img src="./assets/images/screenshots/captura-gesgas.jpg" class="rounded img-fluid"
-                                alt="Captura">
+                            <img src="./assets/images/screenshots/captura-gesgas.jpg" alt="Captura">
                             <p>Gestor de gastos personales</p>
                         </a>
                     </div>
 
-                    <div id="project-taxi" class="container" title="Ir a detalle">
+                    <div id="project-taxi" title="Ir a detalle">
                         <a href="./views/detalleProyectoTaxi.html" target="_blank">
                             <h3>Taxi Málaga</h3>
-                            <img src="./assets/images/screenshots/captura-taxi.png" class="rounded img-fluid"
-                                alt="Captura">
+                            <img src="./assets/images/screenshots/captura-taxi.png" alt="Captura">
                             <p>Paradas de taxis Málaga Centro</p>
                         </a>
                     </div>
@@ -84,68 +83,210 @@
                 </div>
             </section>
 
-            <section id="projects-content2" class="container-fluid content-section">
-                <div id="projects" class="container-fluid">
-                    <div id="project-marketart" class="container" title="Ir a detalle">
+            <section id="projects-content2" class="content-section grid grid-cols-[auto] grid-rows-[auto] items-center">
+                <div id="projects"
+                    class="grid grid-cols-[auto_auto] grid-rows-[auto_auto] justify-items-center md:grid-cols-[1fr_1fr_1fr] md:grid-rows-[auto]">
+
+                    <div id="project-marketart" title="Ir a detalle">
                         <a href="./views/detalleProyectoMarketArt.html" target="_blank">
                             <h3>MarketArt</h3>
-                            <img src="./assets/images/screenshots/captura-marketart.jpg" class="rounded img-fluid"
-                                alt="Captura">
+                            <img src="./assets/images/screenshots/captura-marketart.jpg" alt="Captura">
                             <p>Marketplace de productos artesanales</p>
                         </a>
                     </div>
 
-                    <div id="project-geocar" class="container" title="Ir a detalle">
+                    <div id="project-geocar" title="Ir a detalle">
                         <a href="./views/detalleProyectoGeoCar.html" target="_blank">
                             <h3>GeoCar</h3>
-                            <img src="./assets/images/screenshots/captura-geocar.png" class="rounded img-fluid"
-                                alt="Captura">
+                            <img src="./assets/images/screenshots/captura-geocar.png" alt="Captura">
                             <p>App de aparcamiento geolocalizado</p>
                         </a>
                     </div>
+
+                    <div id="project-cookingtime" title="Ir a detalle">
+                        <a href="./views/detalleProyectoCooking.html" target="_blank">
+                            <h3>CookingTime</h3>
+                            <img src="./assets/images/screenshots/captura-cookingtime.png" alt="Captura">
+                            <p>PWA de recetas</p>
+                        </a>
+                    </div>
+
                 </div>
             </section>
 
-            <section id="tech-content" class="container-fluid content-section">
-                <h2>Tecnologías aprendidas de forma teórica y/o utilizadas en proyectos:</h2>
-                <div id="container-tech">
-                    <div id="client-tech">
+            <section id="tech-content" class="content-section">
+                <h2>Tecnologías</h2>
+                <div>
+                    <button type="button" class="prevItem inactive"><span
+                            class="material-symbols-outlined">chevron_left</span></button>
+                </div>
+
+                <div id="container-tech" class="carousel-container">
+                    <div id="client-tech" class="carousel-item">
                         <p>Lado cliente</p>
                         <div>
-                            <i><img src="./assets/images/tech_icons/HTML5.png" class="techIcon" title="HTML5"></i>
-                            <i><img src="./assets/images/tech_icons/CSS3.png" class="techIcon" id="css" title="CSS3"></i>
-                            <i><img src="./assets/images/tech_icons/Sass.png" class="techIcon" title="Sass"></i>
-                            <i><img src="./assets/images/tech_icons/Bootstrap 5.png" class="techIcon" id="bootstrap" title="Bootstrap 5"></i>
-                            <i><img src="./assets/images/tech_icons/JavaScript.png" class="techIcon" title="Javascript"></i>
-                            <i><img src="./assets/images/tech_icons/Angular.png" class="techIcon" title="Angular"></i>
-                            <i><img src="./assets/images/tech_icons/React.png" class="techIcon" title="React"></i>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/HTML5.png" class="techIcon" title="HTML5"></i>
+                                <div class="progressBar" title="Excelente">
+                                    <span class="excellent"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/CSS3.png" class="techIcon" title="CSS3"></i>
+                                <div class="progressBar" title="Excelente">
+                                    <span class="excellent"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/Sass.png" class="techIcon" title="Sass"></i>
+                                <div class="progressBar" title="Notable">
+                                    <span class="remarkable"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/Bootstrap 5.png" class="techIcon"
+                                        title="Bootstrap 5"></i>
+                                <div class="progressBar" title="Conocimiento teórico">
+                                    <span class="theory"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/JavaScript.png" class="techIcon"
+                                        title="Javascript"></i>
+                                <div class="progressBar" title="Notable">
+                                    <span class="remarkable"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/Angular.png" class="techIcon"
+                                        title="Angular"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/React.png" class="techIcon" title="React"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/Nextjs.png" class="techIcon"
+                                        title="Next.js"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/Tailwind.png" class="techIcon"
+                                        title="Tailwind"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/jQuery.png" class="techIcon" title="jQuery"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="server-tech">
+
+                    <div id="server-tech" class="carousel-item">
                         <p>Lado servidor</p>
                         <div>
-                            <i><img src="./assets/images/tech_icons/PHP.png" class="techIcon" id="php" title="PHP"></i>
-                            <i><img src="./assets/images/tech_icons/Node.js.png" class="techIcon" id="nodejs" title="Node.js"></i>
-                            <i><img src="./assets/images/tech_icons/Spring.png" class="techIcon" id="spring" title="Spring"></i>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/PHP.png" class="techIcon" title="PHP"></i>
+                                <div class="progressBar" title="Notable">
+                                    <span class="remarkable"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/Node.js.png" class="techIcon"
+                                        title="Node.js"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/Spring.png" class="techIcon" title="Spring"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="databse-tech">
+
+                    <div id="databse-tech" class="carousel-item">
                         <p>Bases de datos</p>
                         <div>
-                            <i><img src="./assets/images/tech_icons/MySQL.png" class="techIcon" id="mysql" title="MySQL"></i>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/MySQL.png" class="techIcon" title="MySQL"></i>
+                                <div class="progressBar" title="Notable">
+                                    <span class="remarkable"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/Mongo.png" class="techIcon" title="MongoDB"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="other-tech">
+
+                    <div id="other-tech" class="carousel-item">
                         <p>Otras</p>
                         <div>
-                            <i><img src="./assets/images/tech_icons/C.png" class="techIcon" id="c" title="C"></i>
-                            <i><img src="./assets/images/tech_icons/Java.png" class="techIcon" id="java" title="Java"></i>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/C.png" class="techIcon" title="C"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/Java.png" class="techIcon" title="Java"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
+                            <div class="techGroup">
+                                <i><img src="./assets/images/tech_icons/Typescript.png" class="techIcon"
+                                        title="Typescript"></i>
+                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                    <span class="theoreticalPractical"></span>
+                                    <span class="material-symbols-outlined">memory</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                </div>
+                <div>
+                    <button type="button" class="nextItem"><span
+                            class="material-symbols-outlined">chevron_right</span></button>
                 </div>
             </section>
 
-            <section id="contact-content" class="container-fluid content-section">
+            <section id="contact-content" class="content-section">
                 <h2>Información de contacto</h2>
                 <div id="contact-elements">
                     <p><span class="material-symbols-outlined">mail</span>Email: serfer65@gmail.com</p>

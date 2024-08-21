@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/styleDetails.css">
+    <link rel="stylesheet" href="../styles/detailsOutput.css">
     <script type="text/javascript" src="../js/appDetails.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <!--Google Fonts-->
@@ -16,10 +16,10 @@
         <div id="back-button" title="Volver al porfolio">
             <a href="../index.html"><span class="material-symbols-outlined">arrow_back</span></a>
         </div>
-        <section id="hero-detail">
-            <aside>
-                <div id="technologies">
-                    <p>Tecnologías utilizadas:</p>
+        <section id="hero-detail" class="flex flex-col items-center justify-items-center gap-10 lg:grid lg:grid-cols-[1fr_1fr_1fr] lg:grid-rows-[auto] lg:gap-0">
+            <aside class="flex justify-center items-center">
+                <div id="technologies" class="flex flex-col w-[90%]">
+                    <h3><strong>Tecnologías utilizadas:</strong></h3>
                     <ul>
                         <li>Angular</li>
                         <li>Scss</li>
@@ -37,7 +37,7 @@
 
             <aside>
                 <div id="functionalities">
-                    <p id="paragraph-functionalities"> Funcionalidad principal</p>
+                    <h3 id="paragraph-functionalities"> <strong>Funcionalidad principal</strong></h3>
                     <ul>
                         <li>El usuario puede navegar entre las distintas categorías de productos.</li>
                         <li>El usuario puede ver cada producto en detalle, así como elegir la cantidad que desea y

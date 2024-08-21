@@ -1,11 +1,39 @@
+let carouselIndex = 0;
+let scrollIndex = 0;
+
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("ball-animation").scrollIntoView({ behavior: "smooth" });
 
     setTimeout(() => { //Retardo para esperar a aplicar las funciones cuando finalice la animación de inicio
         showContent();
         writeCodeAnimation();
-        setupScrolling();
+        !navigator.userAgentData.mobile ? setupScrolling() : document.body.classList.remove("overflowed");
     }, 4000);
+
+    document.querySelector("#header-element #hero-menu #menu-button").addEventListener("click", () => {
+        showMenu();
+    });
+
+    document.querySelectorAll("#header-element #hero-menu #menu-list li a").forEach(element => {
+        element.addEventListener("click", () => {
+            toSection(element.dataset.target);
+        });
+    });
+
+    document.querySelectorAll("#header-element .mixLetters").forEach(element => {
+        element.addEventListener("mouseenter", (event) => {
+            const { id, innerText } = event.currentTarget;
+            mixChars(id, innerText);
+        });
+    });
+
+    document.querySelector("#tech-content button.nextItem").addEventListener("click", (event) => {
+        carouselForward(event.currentTarget);
+    });
+
+    document.querySelector("#tech-content button.prevItem").addEventListener("click", (event) => {
+        carouselBackward(event.currentTarget);
+    });
 });
 
 async function writeCodeAnimation() {
@@ -16,13 +44,13 @@ async function writeCodeAnimation() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <title>Porfolio</title>
 </head>
 <body>
     <main>
         <div id="web-developer-info">
             <h1>Sergio Navarro González</h1>
-            <h2>Desarrollador Web FullStack</h2>
+            <h2>Desarrollador Web</h2>
         </div>
     </main>
 </body>
@@ -57,27 +85,29 @@ function showContent() {
 
 /*Scroll menú header*/
 function toSection(idSection) {
+    const elements = Array.from(document.querySelectorAll(".content-section"));
     const elementToScroll = document.getElementById(idSection);
+    const index = elements.findIndex((element => element == elementToScroll));
+    scrollIndex = index;
+
     elementToScroll.scrollIntoView({ behavior: 'smooth' });
-    setupScrolling();
 }
 
 /*Scroll entre secciones*/
 function setupScrolling() {
-    let index = 0;
 
     window.addEventListener("wheel", (event) => {
-        const elements = document.getElementsByClassName("container-fluid content-section");
+        const elements = document.querySelectorAll(".content-section");
 
-        if (event.deltaY > 0 && index < elements.length - 1) {
+        if (event.deltaY > 0 && scrollIndex < elements.length - 1) {
             event.preventDefault();
-            index++;
-            elements[index].scrollIntoView({ behavior: 'smooth' });
-        } else if (event.deltaY < 0 && index !== 0) {
+            scrollIndex++;
+        } else if (event.deltaY < 0 && scrollIndex !== 0) {
             event.preventDefault();
-            index--;
-            elements[index].scrollIntoView({ behavior: 'smooth' });
+            scrollIndex--;
         }
+
+        elements[scrollIndex].scrollIntoView({ behavior: 'smooth' });
     }, { passive: false });
 }
 
@@ -135,13 +165,51 @@ async function writeMixedChar(idElement, charToWrite) {
     });
 }
 
-function debounce(fn){
+function carouselBackward(button) {
+    const nextButton = document.querySelector("#tech-content button.nextItem");
+    const carousel = document.querySelector("#container-tech.carousel-container");
+    const offset = document.querySelector(".carousel-container .carousel-item").clientWidth;
+
+    if (carouselIndex > 0) {
+        carouselIndex--;
+        if (nextButton.classList.contains("inactive")) {
+            nextButton.classList.remove("inactive");
+        }
+    }
+    if (carouselIndex <= 0) {
+        button.classList.add("inactive");
+    }
+
+    carousel.style.transform = `translateX(${-(offset * carouselIndex)}px)`;
+}
+
+function carouselForward(button) {
+    const prevButton = document.querySelector("#tech-content button.prevItem");
+    const carousel = document.querySelector("#container-tech.carousel-container");
+    const carouselItems = document.querySelectorAll("#container-tech.carousel-container .carousel-item").length;
+    const offset = document.querySelector(".carousel-container .carousel-item").clientWidth;
+
+    if (carouselIndex < carouselItems - 1) {
+        carouselIndex++;
+        if (prevButton.classList.contains("inactive")) {
+            prevButton.classList.remove("inactive");
+        }
+    }
+
+    if (carouselIndex >= carouselItems - 1) {
+        button.classList.add("inactive");
+    }
+
+    carousel.style.transform = `translateX(${-(offset * carouselIndex)}px)`;
+}
+
+function debounce(fn) {
 
     let timer;
-    if(timer){
+    if (timer) {
         clearTimeout(timer)
     }
-    return ()=>{
-        timer=setTimeout(300)
+    return () => {
+        timer = setTimeout(300)
     }
 }

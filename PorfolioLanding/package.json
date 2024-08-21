@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  },
+  "scripts": {
+    "tailGlob": "npx tailwindcss -i ./styles/style.css -o ./styles/globalOutput.css --watch",
+    "tailDet": "npx tailwindcss -i ./styles/styleDetails.css -o ./styles/detailsOutput.css --watch"
+  }
+}
