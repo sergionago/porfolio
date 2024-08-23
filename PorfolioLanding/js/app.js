@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
         showContent();
         writeCodeAnimation();
         !navigator.userAgentData.mobile ? setupScrolling() : document.body.classList.remove("overflowed");
-    }, 4000);
-
+    }, 0);
+    // }, 4000); ORIGINAL, SUSTITUIR
     document.querySelector("#header-element #hero-menu #menu-button").addEventListener("click", () => {
         showMenu();
     });
@@ -95,6 +95,10 @@ function toSection(idSection) {
 
 /*Scroll entre secciones*/
 function setupScrolling() {
+    document.querySelectorAll("section.content-section").forEach(section => {
+        section.classList.add("customScroll");
+    })
+    document.querySelector("main").classList.add("customScroll");
 
     window.addEventListener("wheel", (event) => {
         const elements = document.querySelectorAll(".content-section");

@@ -41,7 +41,7 @@
                     </div>
                     <h2 id="job-position" class="mixLetters">Desarrollador Web</h2>
                 </div>
-                <div id="header-div2">
+                <div id="header-div2" class="hidden md:block">
                     <div id="code-animation-container">
                         <pre><code id="code-animation" class="languaje-html"></code></pre>
                     </div>
@@ -50,11 +50,9 @@
         </header>
 
         <main>
-            <section id="projects-content"
-                class="content-section grid grid-cols-[auto] grid-rows-[10%_90%] items-center">
+            <section id="projects-content" class="content-section flex flex-col gap-6 items-center">
                 <h2>Mis proyectos</h2>
-                <div id="projects"
-                    class="grid grid-cols-[auto_auto] grid-rows-[auto_auto] justify-items-center md:grid-cols-[1fr_1fr_1fr] md:grid-rows-[auto]">
+                <div id="projects" class="flex flex-col items-center md:flex-row">
 
                     <div id="project-hostheaven" title="Ir a detalle">
                         <a href="./views/detalleProyectoHHeaven.html" target="_blank">
@@ -71,6 +69,11 @@
                             <p>Gestor de gastos personales</p>
                         </a>
                     </div>
+                </div>
+            </section>
+
+            <section id="projects-content2" class="content-section flex items-center">
+                <div id="projects" class="flex flex-col items-center md:flex-row">
 
                     <div id="project-taxi" title="Ir a detalle">
                         <a href="./views/detalleProyectoTaxi.html" target="_blank">
@@ -80,13 +83,6 @@
                         </a>
                     </div>
 
-                </div>
-            </section>
-
-            <section id="projects-content2" class="content-section grid grid-cols-[auto] grid-rows-[auto] items-center">
-                <div id="projects"
-                    class="grid grid-cols-[auto_auto] grid-rows-[auto_auto] justify-items-center md:grid-cols-[1fr_1fr_1fr] md:grid-rows-[auto]">
-
                     <div id="project-marketart" title="Ir a detalle">
                         <a href="./views/detalleProyectoMarketArt.html" target="_blank">
                             <h3>MarketArt</h3>
@@ -94,6 +90,12 @@
                             <p>Marketplace de productos artesanales</p>
                         </a>
                     </div>
+                </div>
+            </section>
+
+
+            <section id="projects-content3" class="content-section flex items-center">
+                <div id="projects" class="flex flex-col items-center md:flex-row">
 
                     <div id="project-geocar" title="Ir a detalle">
                         <a href="./views/detalleProyectoGeoCar.html" target="_blank">
@@ -117,85 +119,84 @@
             <section id="tech-content" class="content-section">
                 <h2>Tecnologías</h2>
                 <div>
-                    <button type="button" class="prevItem inactive"><span
-                            class="material-symbols-outlined">chevron_left</span></button>
+                    <button type="button" class="prevItem inactive"><span class="material-symbols-outlined">chevron_left</span></button>
                 </div>
 
                 <div id="container-tech" class="carousel-container">
                     <div id="client-tech" class="carousel-item">
                         <p>Lado cliente</p>
                         <div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/HTML5.png" class="techIcon" title="HTML5"></i>
-                                <div class="progressBar" title="Excelente">
+                                <div class="progressBar hidden sm:flex" title="Excelente">
                                     <span class="excellent"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/CSS3.png" class="techIcon" title="CSS3"></i>
-                                <div class="progressBar" title="Excelente">
+                                <div class="progressBar hidden sm:flex" title="Excelente">
                                     <span class="excellent"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/Sass.png" class="techIcon" title="Sass"></i>
-                                <div class="progressBar" title="Notable">
+                                <div class="progressBar hidden sm:flex" title="Notable">
                                     <span class="remarkable"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/Bootstrap 5.png" class="techIcon"
                                         title="Bootstrap 5"></i>
-                                <div class="progressBar" title="Conocimiento teórico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico">
                                     <span class="theory"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/JavaScript.png" class="techIcon"
                                         title="Javascript"></i>
-                                <div class="progressBar" title="Notable">
+                                <div class="progressBar hidden sm:flex" title="Notable">
                                     <span class="remarkable"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/Angular.png" class="techIcon"
                                         title="Angular"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/React.png" class="techIcon" title="React"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/Nextjs.png" class="techIcon"
                                         title="Next.js"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/Tailwind.png" class="techIcon"
                                         title="Tailwind"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/jQuery.png" class="techIcon" title="jQuery"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
@@ -206,24 +207,24 @@
                     <div id="server-tech" class="carousel-item">
                         <p>Lado servidor</p>
                         <div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/PHP.png" class="techIcon" title="PHP"></i>
-                                <div class="progressBar" title="Notable">
+                                <div class="progressBar hidden sm:flex" title="Notable">
                                     <span class="remarkable"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/Node.js.png" class="techIcon"
                                         title="Node.js"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/Spring.png" class="techIcon" title="Spring"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
@@ -234,16 +235,16 @@
                     <div id="databse-tech" class="carousel-item">
                         <p>Bases de datos</p>
                         <div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/MySQL.png" class="techIcon" title="MySQL"></i>
-                                <div class="progressBar" title="Notable">
+                                <div class="progressBar hidden sm:flex" title="Notable">
                                     <span class="remarkable"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/Mongo.png" class="techIcon" title="MongoDB"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
@@ -254,24 +255,24 @@
                     <div id="other-tech" class="carousel-item">
                         <p>Otras</p>
                         <div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/C.png" class="techIcon" title="C"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/Java.png" class="techIcon" title="Java"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
                             </div>
-                            <div class="techGroup">
+                            <div class="techGroup grid grid-cols-[1fr] grid-rows-[auto] sm:grid-cols-[0.4fr_1fr]">
                                 <i><img src="./assets/images/tech_icons/Typescript.png" class="techIcon"
                                         title="Typescript"></i>
-                                <div class="progressBar" title="Conocimiento teórico y práctico">
+                                <div class="progressBar hidden sm:flex" title="Conocimiento teórico y práctico">
                                     <span class="theoreticalPractical"></span>
                                     <span class="material-symbols-outlined">memory</span>
                                 </div>
@@ -281,8 +282,7 @@
 
                 </div>
                 <div>
-                    <button type="button" class="nextItem"><span
-                            class="material-symbols-outlined">chevron_right</span></button>
+                    <button type="button" class="nextItem"><span class="material-symbols-outlined">chevron_right</span></button>
                 </div>
             </section>
 

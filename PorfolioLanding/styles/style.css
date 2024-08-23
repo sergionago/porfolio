@@ -10,6 +10,16 @@ body.overflowed {
     /*Elimino el scroll para que se ajuste al comportamiento de scroll determinado por javascript*/
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5rem;
+}
+
+main.customScroll{
+    display: block;
+}
+
 /*Initial animation*/
 /*La animación de inicio tarda 4 segundos en completarse */
 #animation-container {
@@ -29,7 +39,7 @@ body.overflowed {
     width: 8rem;
     height: 8rem;
     background-color: black;
-    animation: ballDown 2s ease-in-out 1s infinite, fillSpace 1s ease-in-out 3s forwards;
+    /* animation: ballDown 2s ease-in-out 1s infinite, fillSpace 1s ease-in-out 3s forwards;  DESCOMENTAR*/
 }
 
 @keyframes ballDown {
@@ -278,10 +288,13 @@ h2 {
 
 /*Projects section*/
 section.content-section {
-    width: 100vw;
-    height: 100vh;
     text-align: center;
     padding: 1rem 0;
+}
+
+section.content-section.customScroll {
+    width: 100vw;
+    height: 100vh;
 }
 
 section.content-section:not(#tech-content) {
@@ -292,21 +305,15 @@ section[id^="projects-content"] #projects {
     gap: 2rem;
 }
 
-section[id^="projects-content"] #projects img {
-    width: auto;
-    border: 1px solid burlywood;
-}
-
 section[id^="projects-content"] #projects>div {
     cursor: pointer;
     border: 1px solid black;
     border-radius: 1rem;
-    transform: scale(1);
     transition: transform 1s;
 }
 
 section[id^="projects-content"] #projects>div:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: transform 1s;
 }
 
@@ -315,9 +322,10 @@ section[id^="projects-content"] #projects>div h3 {
     font-weight: 600;
 }
 
-section[id^="projects-content"] #projects>div img {
+section[id^="projects-content"] #projects img {
+    width: 98%;
+    border: 1px solid burlywood;
     border-radius: 0.2rem;
-    width: 95%;
 }
 
 section[id^="projects-content"] #projects>div:hover img {
@@ -402,8 +410,6 @@ section[id^="projects-content"] #projects div#project-marketart:hover p::before 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(195, 195, 195, 0.5);
-    border: 1px solid gray;
     border-radius: 100%;
     cursor: pointer;
 }
@@ -467,16 +473,15 @@ section[id^="projects-content"] #projects div#project-marketart:hover p::before 
 }
 
 #tech-content #container-tech>div>div .techGroup {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 0.4fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto; */
     align-items: center;
     justify-items: center;
     width: 100%;
 }
 
 #tech-content #container-tech>div>div .techGroup .progressBar {
-    display: flex;
     align-items: center;
     height: 15%;
     width: 60%;

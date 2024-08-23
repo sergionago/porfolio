@@ -566,6 +566,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-full {
   height: 100%;
 }
@@ -586,24 +590,12 @@ video {
   width: 100vw;
 }
 
-.grid-cols-\[auto\] {
-  grid-template-columns: auto;
-}
-
-.grid-cols-\[auto_auto\] {
-  grid-template-columns: auto auto;
-}
-
-.grid-rows-\[10\%_90\%\] {
-  grid-template-rows: 10% 90%;
+.grid-cols-\[1fr\] {
+  grid-template-columns: 1fr;
 }
 
 .grid-rows-\[auto\] {
   grid-template-rows: auto;
-}
-
-.grid-rows-\[auto_auto\] {
-  grid-template-rows: auto auto;
 }
 
 .flex-col {
@@ -630,47 +622,43 @@ video {
   gap: 2.5rem;
 }
 
-.rounded {
-  border-radius: 0.25rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.gap-6 {
+  gap: 1.5rem;
 }
 
 main {
-  width: 100%;
-  height: 98vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 #hero-detail {
-  /* display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr;
-    grid-template-rows: auto;
-    align-items: center;
-    justify-items: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
-  height: 90%;
+  height: 100%;
   padding: 2rem;
+}
+
+@media (min-width:1024px) {
+  #hero-detail {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
 
 /*Back button*/
 
 #back-button {
-  position: absolute;
-  top: 5%;
-  left: 5%;
+  align-self: baseline;
+  width: 11rem;
 }
 
 #back-button a {
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   background-color: gainsboro;
   text-decoration: none;
   color: black;
@@ -689,34 +677,32 @@ main {
 
 #back-button a span {
   vertical-align: middle;
-  position: relative;
-  left: 0;
 }
 
 @keyframes bow {
   0% {
-    width: 2.5rem;
-    text-align: end;
+    width: 3rem;
+    justify-content: end;
   }
 
   50% {
-    text-align: end;
     width: 4rem;
+    justify-content: end;
   }
 
   100% {
-    text-align: end;
     width: 2.5rem;
+    justify-content: end;
   }
 }
 
 @keyframes goBack {
   0% {
-    left: 0;
+    transform: translateX(0);
   }
 
   100% {
-    left: -400%;
+    transform: translateX(-400%);
   }
 }
 
@@ -729,7 +715,7 @@ main {
 }
 
 #img-and-button img {
-  height: 16rem;
+  width: 90%;
   border: 1px solid burlywood;
   border-radius: 0.2rem;
   margin-bottom: 1rem;
@@ -750,7 +736,7 @@ main {
 }
 
 #img-and-button a:hover {
-  width: 100%;
+  width: 60%;
   background-color: lightcoral;
   color: white;
   transition: width 500ms ease-in-out;
@@ -758,8 +744,18 @@ main {
 
 #img-and-button #deployed-project {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
   width: 100%;
   justify-content: space-around;
+}
+
+@media (min-width:500px) {
+  #img-and-button #deployed-project {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 /*Asides*/
@@ -795,7 +791,7 @@ aside>div::after {
 aside>div>h3 {
   margin: 0;
   font-size: 1.2rem;
-  padding: 1rem 0;
+  padding: 1rem 0.5rem;
   background-color: white;
   text-align: center;
 }
@@ -806,7 +802,7 @@ aside>div>ul {
   row-gap: 1rem;
   margin: 0;
   background-color: white;
-  list-style-type:disc;
+  list-style-type: disc;
   padding: 1rem 2rem;
 }
 
@@ -836,13 +832,23 @@ aside:has(#functionalities) {
   width: 80%;
 }
 
-@media (min-width: 768px) {
-  .md\:grid-cols-\[1fr_1fr_1fr\] {
-    grid-template-columns: 1fr 1fr 1fr;
+@media (min-width: 640px) {
+  .sm\:flex {
+    display: flex;
   }
 
-  .md\:grid-rows-\[auto\] {
-    grid-template-rows: auto;
+  .sm\:grid-cols-\[0\.4fr_1fr\] {
+    grid-template-columns: 0.4fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:block {
+    display: block;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 }
 
