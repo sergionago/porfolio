@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showContent();
         writeCodeAnimation();
         !navigator.userAgentData.mobile ? setupScrolling() : document.body.classList.remove("overflowed");
-    }, 0);
-    // }, 4000); ORIGINAL, SUSTITUIR
+    }, 4000);
     document.querySelector("#header-element #hero-menu #menu-button").addEventListener("click", () => {
         showMenu();
     });

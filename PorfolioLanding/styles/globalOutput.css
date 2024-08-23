@@ -648,7 +648,7 @@ main.customScroll{
   width: 8rem;
   height: 8rem;
   background-color: black;
-  /* animation: ballDown 2s ease-in-out 1s infinite, fillSpace 1s ease-in-out 3s forwards;  DESCOMENTAR*/
+  animation: ballDown 2s ease-in-out 1s infinite, fillSpace 1s ease-in-out 3s forwards;
 }
 
 @keyframes ballDown {
