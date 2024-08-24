@@ -65,19 +65,19 @@ export default function Home() {
         style={{ opacity: '0.4', zIndex: '-1' }}
       />
 
-      <section className="bg-blue-400 rounded w-[40%] py-5 flex place-content-center items-center shadow-black shadow">
-        <form method="POST" onSubmit={handleLogin} className="flex flex-col gap-3 sm:w-[80%] lg:w-1/2">
-          <div className="flex flex-col">
+      <section className="bg-blue-400 rounded py-5 flex place-content-center items-center shadow-black shadow w-[80%] sm:w-[60%] lg:w-[40%]">
+        <form method="POST" onSubmit={handleLogin} className="flex flex-col gap-3 w-full items-center">
+          <div className="flex flex-col w-[65%] lg:w-[50%]">
             <label htmlFor="mail">Email</label>
             <input type="mail" id="mail" name="mail" onChange={handleChange} />
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col w-[65%] lg:w-[50%]">
             <label htmlFor="pass">Contraseña</label>
             <input type="password" id="pass" name="pass" onChange={handleChange} />
           </div>
 
-          <div className="flex place-content-around mt-3">
+          <div className="flex flex-col gap-3 place-content-around mt-3 w-[60%] sm:flex-row">
             <button type="submit" className="border-2 border-black rounded p-1 hover:bg-orange-200">Iniciar Sesión</button>
             <button type="button" className="border-2 border-black rounded p-1 hover:bg-orange-200" onClick={activateModal}>Registro</button>
           </div>

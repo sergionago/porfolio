@@ -61,16 +61,16 @@ export default function Page() {
 
     return (
         <main className="w-screen h-screen flex flex-col items-center">
-            <section className="flex flex-col gap-5 bg-white p-5 my-2 sm:w-[80%] lg:w-[60%] xl:w-1/2">
+            <section className="flex flex-col gap-5 bg-white p-4 my-2 w-[90%] md:w-[80%] lg:w-[60%] xl:w-1/2">
                 <article>
                     <h1 className="text-center text-2xl">Mis recetas</h1>
                 </article>
-                <article className="flex place-content-between">
+                <article className="flex flex-col-reverse items-center gap-4 sm:flex-row place-content-between">
                     <form className="flex items-center gap-3 flex-grow-[0.3]" onSubmit={handleSearchSubmit}>
                         <input type="text" placeholder="Search by recipe name" className="w-[100%] border-b-2 border-support-gray" onChange={handleSearchTyping} />
-                        <button type="submit" title="Search Recipe"><i aria-hidden className="fa-solid fa-magnifying-glass"></i></button>
+                        <button type="submit" title="Search Recipe" className="hidden sm:block"><i aria-hidden className="fa-solid fa-magnifying-glass"></i></button>
                     </form>
-                    <div className="flex" title="Add Recipe">
+                    <div className="flex border-2 border-gray-400 rounded p-2" title="Add Recipe">
                         <Link href={'./add-recipe'} target="_blank" className="flex flex-col items-center group">
                             <p>Añadir receta</p>
                             <i aria-hidden className="fa-solid fa-plus group-hover:text-strong-red"></i>

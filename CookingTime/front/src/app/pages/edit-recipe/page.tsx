@@ -101,17 +101,18 @@ export default function Page() {
     }
 
     return (
-        <main className="w-[90vw] h-screen bg-white mx-auto relative">
-            <Link href={`/pages/view-recipe?recipeId=${recipeData._id}`} className="text-xl border-2 border-support-gray absolute top-4 left-4 px-2 py-1 rounded hover:text-strong-red" title="Return to recipe view">
-                <i aria-hidden className="fa-solid fa-arrow-left"></i>
-            </Link>
+        <main className="w-[90vw] h-screen bg-white mx-auto">
+
             <form onSubmit={handleSubmit} className="flex flex-col p-6 bg-inherit">
                 <section className="border-b-2 border-black flex flex-col items-center gap-3 pb-4">
+                    <Link href={`/pages/view-recipe?recipeId=${recipeData._id}`} className="text-xl border-2 border-support-gray px-2 py-1 rounded self-start hover:text-strong-red" title="Return to recipe view">
+                        <i aria-hidden className="fa-solid fa-arrow-left"></i>
+                    </Link>
                     <article>
                         <input type="text" placeholder="Nombre de la receta" name="name" className="border-b-2 border-support-gray text-xl text-center" onChange={handleChange} value={recipeData.name} />
                     </article>
-                    <article className="gap-4 w-[90%] grid grid-cols-[1fr_1fr] grid-rows-[auto_auto] lg:grid lg:grid-cols-[35%_30%_35%] lg:grid-rows-[auto]">
-                        <div className="self-start flex flex-col items-center gap-2">
+                    <article className="gap-4 w-[90%] flex flex-col items-center sm:grid sm:grid-cols-[1fr_1fr] sm:grid-rows-[auto_auto] lg:grid lg:grid-cols-[35%_30%_35%] lg:grid-rows-[auto]">
+                        <div className="flex flex-col items-center gap-2">
                             <p className="text-lg">Plato terminado:</p>
                             <Image
                                 src={SERVER_URI + 'back' + recipeData.finalImage}
@@ -136,7 +137,7 @@ export default function Page() {
                             </ul>
                             <button type="button" className="border-2 border-support-gray rounded-2xl px-2 py-1 group" onClick={addIngredient}><i aria-hidden className="fa-solid fa-plus group-hover:text-strong-orange" title="Add Ingredient"></i></button>
                         </div>
-                        <div className="self-start flex flex-col items-center col-span-2 mt-2 lg:col-span-1">
+                        <div className="flex flex-col items-center col-span-2 mt-2 sm:self-start lg:col-span-1">
                             <label htmlFor="text" className="text-lg">Tiempo de preparación:</label>
                             <input type="text" id="time" placeholder="Tiempo de preparación" name="time" className="border-b-2 border-support-gray" onChange={handleChange} value={recipeData.time} />
                         </div>
@@ -150,12 +151,12 @@ export default function Page() {
                         <article key={step.id} id={step.id.toString()} className="mb-8 w-full">
                             <div className="mb-2 flex text-lg">
                                 <span>{step.id}.&nbsp;</span>
-                                <input type="text" name="title" className="border-b-2 border-black" placeholder="Step title" onChange={handleStepChange} value={step.title} />
+                                <input type="text" name="title" className="border-b-2 border-black w-full sm:w-auto" placeholder="Step title" onChange={handleStepChange} value={step.title} />
                             </div>
 
                             {step.id % 2 == 0 ?
-                                <div className="border-2 border-black grid grid-cols-[auto_auto] grid-rows-[auto]">
-                                    <textarea name="description" cols={50} rows={5} placeholder="Step description" onChange={handleStepChange} value={step.description} className="m-auto p-4 w-full"></textarea>
+                                <div className="border-2 border-black flex flex-col p-1 gap-4 items-center sm:grid sm:grid-cols-[auto_auto] sm:grid-rows-[auto]">
+                                    <textarea name="description" cols={50} rows={5} placeholder="Step description" onChange={handleStepChange} value={step.description} className="m-auto p-3 w-full"></textarea>
                                     <Image
                                         src={SERVER_URI + 'back' + step.image}
                                         alt="Step image"
@@ -166,7 +167,7 @@ export default function Page() {
                                     />
                                 </div>
                                 :
-                                <div className="border-2 border-black grid grid-cols-[auto_auto] grid-rows-[auto]">
+                                <div className="border-2 border-black flex flex-col p-1 gap-4 items-center sm:grid sm:grid-cols-[auto_auto] sm:grid-rows-[auto]">
                                     <Image
                                         src={SERVER_URI + 'back' + step.image}
                                         alt="Step image"
@@ -175,7 +176,7 @@ export default function Page() {
                                         style={{ justifySelf: 'start', height: 'auto', width: 'auto' }}
                                         priority
                                     />
-                                    <textarea name="description" cols={50} rows={5} placeholder="Step description" onChange={handleStepChange} value={step.description} className="m-auto p-4 w-full"></textarea>
+                                    <textarea name="description" cols={50} rows={5} placeholder="Step description" onChange={handleStepChange} value={step.description} className="m-auto p-3 w-full"></textarea>
                                 </div>}
                         </article>
                     ))}

@@ -134,17 +134,18 @@ export default function Page() {
     }
 
     return (
-        <main className="w-[90vw] h-screen bg-white mx-auto relative">
-            <Link href={'/pages/recipes-list'} className="text-xl border-2 border-support-gray absolute top-4 left-4 px-2 py-1 rounded hover:text-strong-red" title="Return to recipe list">
-                <i aria-hidden className="fa-solid fa-arrow-left"></i>
-            </Link>
+        <main className="w-[90vw] h-screen bg-white mx-auto">
+
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 p-6 bg-inherit">
+                <Link href={'/pages/recipes-list'} className="text-xl border-2 border-support-gray px-2 py-1 self-start rounded hover:text-strong-red" title="Return to recipe list">
+                    <i aria-hidden className="fa-solid fa-arrow-left"></i>
+                </Link>
                 <section className="border-b-2 border-black w-full flex flex-col items-center gap-3 pb-3">
                     <article>
                         <input type="text" placeholder="Recipe name" name="name" className="border-b-2 border-support-gray text-xl text-center" onChange={handleChange} />
                     </article>
-                    <article className="gap-4 w-[90%] grid grid-cols-[1fr_1fr] grid-rows-[auto_auto] lg:grid lg:grid-cols-[35%_30%_35%] lg:grid-rows-[auto]">
-                        <div className="self-start flex flex-col items-center gap-2 relative">
+                    <article className="w-full flex flex-col items-center gap-6 sm:grid sm:grid-cols-[1fr_1fr] sm:grid-rows-[auto_auto] lg:grid lg:grid-cols-[35%_30%_35%] lg:grid-rows-[auto]">
+                        <div className="flex flex-col items-center gap-2 relative sm:self-start">
                             <p className="text-lg">Imagen plato terminado:</p>
                             <label htmlFor="file" className="text-lg p-2 border-2 border-support-gray rounded cursor-pointer hover:text-strong-red"><i aria-hidden className="fa-solid fa-upload mr-2"></i>Seleccionar archivo</label>
                             <input type="file" id="file" name="finalImage" onChange={handleChange} className="overflow-hidden absolute w-0 z-[-1]" />
@@ -163,7 +164,7 @@ export default function Page() {
                             </ul>
                             <button type="button" className="border-2 border-support-gray rounded-2xl px-2 py-1 group" onClick={addIngredient}><i aria-hidden className="fa-solid fa-plus group-hover:text-strong-orange" title="Add Ingredient"></i></button>
                         </div>
-                        <div className="self-start flex place-content-center col-span-2 mt-4 lg:col-span-1">
+                        <div className="flex place-content-center col-span-2 mt-4 lg:col-span-1 lg:self-start">
                             <input type="text" placeholder="Cooking time" name="time" className="border-b-2 border-support-gray" onChange={handleChange} />
                         </div>
                     </article>
@@ -174,27 +175,27 @@ export default function Page() {
                     <h2 className="text-2xl mb-2">Pasos:</h2>
                     {recipeData.steps.map((ingredient) => (
                         <article key={ingredient.id} id={ingredient.id.toString()} className="mb-8 w-full">
-                            <div className="mb-2">
+                            <div className="flex mb-2">
                                 <span>{ingredient.id}.&nbsp;</span>
-                                <input type="text" name="title" className="border-b-2 border-black" placeholder="Step title" onChange={handleStepChange} />
+                                <input type="text" name="title" className="border-b-2 border-black w-full" placeholder="Step title" onChange={handleStepChange} />
                             </div>
 
                             {ingredient.id % 2 == 0 ?
-                                <div className="border-2 border-black grid grid-cols-[auto_auto] grid-rows-[auto] items-center gap-4">
-                                    <textarea name="description" cols={50} rows={5} placeholder="Step description" onChange={handleStepChange}></textarea>
+                                <div className="border-2 border-black flex flex-col p-2 sm:grid sm:grid-cols-[auto_auto] sm:grid-rows-[auto] items-center gap-4">
+                                    <textarea name="description" cols={50} rows={5} placeholder="Step description" className="w-full" onChange={handleStepChange}></textarea>
                                     <div className="relative flex flex-col items-center gap-2">
                                         <p>Imagen del paso:</p>
-                                        <label htmlFor={'image'+ingredient.id} className="p-2 border-2 border-support-gray rounded cursor-pointer hover:text-strong-red text-center"><i aria-hidden className="fa-solid fa-upload mr-2"></i>Seleccionar archivo</label>
-                                        <input type="file" id={'image'+ingredient.id} name="image" onChange={handleStepChange} className="overflow-hidden absolute w-0 z-[-1]" />
+                                        <label htmlFor={'image' + ingredient.id} className="p-2 border-2 border-support-gray rounded cursor-pointer hover:text-strong-red text-center"><i aria-hidden className="fa-solid fa-upload mr-2"></i>Seleccionar archivo</label>
+                                        <input type="file" id={'image' + ingredient.id} name="image" onChange={handleStepChange} className="overflow-hidden absolute w-0 z-[-1]" />
                                     </div>
                                 </div> :
-                                <div className="border-2 border-black grid grid-cols-[auto_auto] grid-rows-[auto] items-center gap-4">
+                                <div className="border-2 border-black flex flex-col p-2 sm:grid sm:grid-cols-[auto_auto] sm:grid-rows-[auto] items-center gap-4">
                                     <div className="relative flex flex-col items-center gap-2">
                                         <p>Imagen del paso:</p>
-                                        <label htmlFor={'image'+ingredient.id} className="p-2 border-2 border-support-gray rounded cursor-pointer hover:text-strong-red text-center"><i aria-hidden className="fa-solid fa-upload mr-2"></i>Seleccionar archivo</label>
-                                        <input type="file" id={'image'+ingredient.id} name="image" onChange={handleStepChange} className="overflow-hidden absolute w-0 z-[-1]" />
+                                        <label htmlFor={'image' + ingredient.id} className="p-2 border-2 border-support-gray rounded cursor-pointer hover:text-strong-red text-center"><i aria-hidden className="fa-solid fa-upload mr-2"></i>Seleccionar archivo</label>
+                                        <input type="file" id={'image' + ingredient.id} name="image" onChange={handleStepChange} className="overflow-hidden absolute w-0 z-[-1]" />
                                     </div>
-                                    <textarea name="description" cols={50} rows={5} placeholder="Step description" onChange={handleStepChange}></textarea>
+                                    <textarea name="description" cols={50} rows={5} placeholder="Step description" className="w-full" onChange={handleStepChange}></textarea>
                                 </div>}
                         </article>
                     ))}
@@ -202,7 +203,7 @@ export default function Page() {
 
                 </section>
                 <section className="flex flex-col place-content-center">
-                    <button type="submit" className="w-1/5 mx-auto border-2 border-support-gray rounded-xl p-3 text-lg hover:bg-strong-red hover:text-white">Crear Receta</button>
+                    <button type="submit" className="mx-auto border-2 border-support-gray rounded-xl p-3 text-lg hover:bg-strong-red hover:text-white">Crear Receta</button>
                     {serverResponse && <p className="text-center text-lg my-2">{serverResponse}</p>}
                 </section>
             </form>

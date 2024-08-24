@@ -46,16 +46,16 @@ export default function Page() {
 
     return (
         <main className="w-[90vw] h-screen bg-white mx-auto">
-            <section className="bg-white p-6 relative">
-                <Link href={'/pages/recipes-list'} className="text-xl border-2 border-support-gray absolute top-4 left-4 px-2 py-1 rounded hover:text-strong-red" title="Return to recipe list">
+            <section className="bg-white p-6">
+                <section className="border-b-2 border-black flex flex-col items-center gap-3 pb-4">
+                <Link href={'/pages/recipes-list'} className="text-xl border-2 border-support-gray px-2 py-1 rounded self-start hover:text-strong-red" title="Return to recipe list">
                     <i aria-hidden className="fa-solid fa-arrow-left"></i>
                 </Link>
-                <section className="border-b-2 border-black flex flex-col items-center gap-3 pb-4">
                     <article>
                         <p className="border-b-2 border-support-gray text-xl text-center">{recipeData.name}</p>
                     </article>
-                    <article className="gap-4 w-[90%] grid grid-cols-[1fr_1fr] grid-rows-[auto_auto] lg:grid lg:grid-cols-[35%_30%_35%] lg:grid-rows-[auto]">
-                        <div className="self-start flex flex-col items-center gap-2">
+                    <article className="gap-4 w-[90%] flex flex-col items-center sm:grid sm:grid-cols-[1fr_1fr] sm:grid-rows-[auto_auto] lg:grid lg:grid-cols-[35%_30%_35%] lg:grid-rows-[auto]">
+                        <div className="flex flex-col items-center gap-2">
                             <p className="text-lg">Plato terminado:</p>
                             <Image
                                 src={SERVER_URI + 'back' + recipeData.finalImage}
@@ -79,7 +79,7 @@ export default function Page() {
                                 ))}
                             </ul>
                         </div>
-                        <div className="flex items-center place-content-around col-span-2 lg:flex lg:flex-col lg:items-center lg:self-start lg:col-span-1 lg:gap-8">
+                        <div className="flex items-center place-content-around col-span-2 gap-2 w-full lg:flex lg:flex-col lg:items-center lg:self-start lg:col-span-1 lg:gap-8">
                             <div className="flex flex-col items-center">
                                 <p className="text-lg">Tiempo de preparación:</p>
                                 <p>{recipeData.time}</p>
@@ -105,7 +105,7 @@ export default function Page() {
                             </div>
 
                             {step.id % 2 == 0 ?
-                                <div className="border-2 border-black grid grid-cols-[auto_auto] grid-rows-[auto] gap-4 items-center">
+                                <div className="border-2 border-black flex flex-col p-1 sm:grid sm:grid-cols-[auto_auto] sm:grid-rows-[auto] gap-4 items-center">
                                     <p className="p-4">{step.description}</p>
                                     <Image
                                         src={SERVER_URI + 'back' + step.image}
@@ -117,7 +117,7 @@ export default function Page() {
                                     />
                                 </div>
                                 :
-                                <div className="border-2 border-black grid grid-cols-[auto_auto] grid-rows-[auto] gap-4 items-center">
+                                <div className="border-2 border-black flex flex-col p-1 sm:grid sm:grid-cols-[auto_auto] sm:grid-rows-[auto] gap-4 items-center">
                                     <Image
                                         src={SERVER_URI + 'back' + step.image}
                                         alt="Step image"
