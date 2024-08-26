@@ -19,10 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Primero creo la función debounceada que solo ejecuta mixchars después del retardo.
+    const debouncedMixChars = debounce((id, text) => mixChars(id, text), 450);
     document.querySelectorAll("#header-element .mixLetters").forEach(element => {
         element.addEventListener("mouseenter", (event) => {
             const { id, innerText } = event.currentTarget;
-            mixChars(id, innerText);
+            debouncedMixChars(id, innerText);
         });
     });
 
@@ -206,13 +208,13 @@ function carouselForward(button) {
     carousel.style.transform = `translateX(${-(offset * carouselIndex)}px)`;
 }
 
-function debounce(fn) {
-
+function debounce(fn, delay) {
     let timer;
-    if (timer) {
-        clearTimeout(timer)
-    }
-    return () => {
-        timer = setTimeout(300)
+
+    return function (...args) {
+        clearTimeout(timer); // Limpia el temporizador anterior
+        timer = setTimeout(() => {
+            fn.apply(this, args); // Ejecuta la función después del retraso, recibiendo los parámetros originales de fn
+        }, delay);
     }
 }
