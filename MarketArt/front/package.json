@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "serve:prod": "http-server ./dist/market-art -p 4200 --spa",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -20,6 +21,7 @@
     "@angular/router": "^16.2.0",
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "date-fns": "^2.30.0",
+    "http-server": "^14.1.1",
     "ngx-cookie-service": "^16.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
