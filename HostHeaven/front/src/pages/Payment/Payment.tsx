@@ -213,7 +213,7 @@ function Payment() {
                 <img src={logo} alt="Logo" title='Ir a Home' onClick={redirectHome} />
                 <section id="period">
                     <p>{setSectionNumber()}. Elige un período</p>
-                    <article>
+                    <article className='flex flex-col items-center gap-4 md:flex-row md:justify-around'>
                         <div id="1month">
                             <div onClick={selectRadio}>
                                 <input type="radio" name="time-period" defaultValue="1" defaultChecked />
@@ -258,7 +258,7 @@ function Payment() {
 
                 {!isLoggedIn && <Auth sectionNumber={setSectionNumber()} updateLoginStatus={onLoginIn} />}
 
-                <section id="payment-method">
+                <section id="payment-method" className='flex flex-col gap-y-4 sm:grid sm:grid-rows-[auto_auto] sm:grid-cols-[auto_auto]'>
                     <p>{setSectionNumber()}. Elige un método de pago</p>
 
                     <article>
@@ -283,30 +283,30 @@ function Payment() {
                             <input type="radio" name="payment_method" id="wallet" value="WALLET" />
                         </div>
                     </article>
-                    <article>
+                    <article className='border-[1px] p-3 border-gray-300 mt-4 rounded md:m-0'>
                         <input type="text" placeholder='Nombre del titular' />
                         <input type="text" placeholder='Número de tarjeta' />
-                        <div>
+                        <div className='flex flex-col'>
                             <input type="date" placeholder='Fecha de vencimiento' />
                             <input type="number" placeholder='Código de seguridad' />
                         </div>
                     </article>
                 </section>
-                <section id="summary">
+                <section id="summary" className='flex flex-col gap-y-10 lg:grid lg:grid-rows-[auto_auto] lg:grid-cols-[auto_auto]'>
                     <p>{setSectionNumber()}. Resumen del pedido</p>
 
                     <article id="user-data">
-                        <div>
+                        <div className='flex flex-col items-end md:flex-row'>
                             <label htmlFor="username">Nombre usuario</label>
                             <input type="text" readOnly defaultValue={userData.name || ""} id="username" />
                         </div>
-                        <div>
+                        <div className='flex flex-col items-end md:flex-row'>
                             <label htmlFor="useremail">Correo electrónico</label>
                             <input type="email" readOnly defaultValue={userData.email || ""} id="useremail" />
                         </div>
                     </article>
 
-                    <article id="package-data">
+                    <article id="package-data" className='flex flex-col items-center'>
                         <ul>
                             <li>Tipo de hosting: <span>{packageData.hosting_type}</span></li>
                             <li><span>{packageData.storage || 0}GB</span> de almacenamiento</li>

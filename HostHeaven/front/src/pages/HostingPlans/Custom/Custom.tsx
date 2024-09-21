@@ -217,7 +217,7 @@ function Custom() {
             <h3>No hay problema, crea el tuyo propio</h3>
             <article>
                 <form action="#" id="custom-creator-form" onSubmit={handleSubmit}>
-                    <div>
+                    <div className='flex flex-col items-center gap-6 sm:flex-row sm:gap-12 sm:justify-between'>
                         <div className='form-group-select'>
                             <label htmlFor="type">Tipo de Hosting</label>
                             <select name="hosting_type" id="type" onChange={handleChange}>
@@ -238,7 +238,7 @@ function Custom() {
                         </div>
                     </div>
 
-                    <div>
+                    <div className='flex flex-col items-center gap-6 sm:flex-row sm:gap-12 sm:justify-between'>
                         <div className='form-group'>
                             <label htmlFor="doms">Dominios</label>
                             <input type="number" id="doms" name="domains" onChange={handleChange} placeholder=' ' />
@@ -253,7 +253,7 @@ function Custom() {
                         </div>
                     </div>
 
-                    <div className="booleans">
+                    <div className="booleans flex flex-col items-center gap-6 sm:flex-row sm:gap-12 sm:justify-between">
                         <div>
                             <label htmlFor="support">¿Soporte técnico 24 horas?</label>
                             <select name="technical_support_24h" id="support" onChange={handleChange} defaultValue="false">

@@ -83,7 +83,7 @@ function Standard() {
 
 
     return (
-        <section id="standard-packages">
+        <section id="standard-packages" className='grid grid-cols-[1fr] grid-rows-[1fr_1fr_1fr_1fr] sm:grid-rows-[1fr_1fr] sm:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr_1fr] lg:grid-rows-[1fr]'>
             {hostingPackages.map((data) => (
                 <div key={data.id_package} id={data.id_package.toString()} className={"package " + data.package_name}>
                     <span className='img-server' id={data.package_name}></span>

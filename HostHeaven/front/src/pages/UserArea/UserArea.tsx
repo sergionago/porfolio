@@ -83,11 +83,11 @@ function UserArea() {
     return (
         <>
             <Header imagePath={imgUrl} />
-            <main>
+            <main className='flex flex-row md:flex-col'>
                 {!isAdmin ? (
                     <>
                         <section id="tabs">
-                            <ul>
+                            <ul className='flex flex-col md:flex-row'>
                                 <li id="hosting-summary-tab" className={showContent === "hosting-summary" ? "active" : ""} onClick={() => openTab("hosting-summary")}>Resumen Servicio</li>
                                 <li id="modify-user-tab" className={showContent === "modify-user" ? "active" : ""} onClick={() => openTab("modify-user")}>Editar Datos</li>
                                 <li id="modify-service-tab" className={showContent === "modify-service" ? "active" : ""} onClick={() => openTab("modify-service")}>Modificar Servicio</li>

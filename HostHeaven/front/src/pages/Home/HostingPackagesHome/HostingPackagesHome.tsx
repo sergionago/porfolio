@@ -90,7 +90,7 @@ function HostingPackagesHome() {
     return (
         <section id="home-packages-container">
             <h2>Contrata ya el plan que mejor se adapte a tus necesidades</h2>
-            <article>
+            <article className='grid grid-cols-[1fr] grid-rows-[1fr_1fr_1fr_1fr] sm:grid-rows-[1fr_1fr] sm:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr_1fr] lg:grid-rows-[1fr]'>
                 {hostingPackages.map((data) => (
                     <div key={data.id_package} id={data.id_package.toString()} className={"package " + data.package_name}>
                         <div className="package-header">
@@ -127,7 +127,7 @@ function HostingPackagesHome() {
 
             </article>
             <article className='btn-to-cart-custom'>
-                <p>O pulsa sobre el botón y configura tu propio plan personalizado <i className="fa-regular fa-circle-right"></i></p>
+                <p>O configura tu propio plan personalizado <i className="fa-regular fa-circle-down"></i></p>
                 <button type="button"><Link to="/hostingPlans#custom-creator-container">Lo quiero a mi manera <i className="fa-solid fa-champagne-glasses"></i></Link></button>
             </article>
 

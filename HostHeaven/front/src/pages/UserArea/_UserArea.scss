@@ -3,7 +3,6 @@
 
 #tabs ul {
     list-style-type: none;
-    display: flex;
     margin: 0;
     padding: 0;
 
@@ -23,14 +22,15 @@
     }
 }
 
-
-
 #tab-content {
+    width: 100%;
 
     &>article {
         margin: 0;
         padding: 2rem;
         background-color: vars.$background-white;
+        height: 100%;
+        width: 100%;
 
         &.active {
             display: block;

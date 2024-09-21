@@ -13,12 +13,9 @@ main#payment-page {
     }
 
     section:not(#server-response) {
-        display: grid;
-        grid-template-rows: auto auto;
-        grid-template-columns: auto auto;
         align-items: center;
         border: 3px solid vars.$background-white;
-        margin: 2rem 4rem;
+        margin: 2rem;
         padding: 2rem;
 
         &>p {
@@ -27,6 +24,7 @@ main#payment-page {
             text-align: start;
             font-weight: 600;
             font-size: 1.1rem;
+            padding: 0.5rem 0;
         }
     }
 
@@ -35,8 +33,6 @@ main#payment-page {
         article {
             grid-row: 2;
             grid-column: 1/3;
-            display: flex;
-            justify-content: space-around;
 
             >div {
 
@@ -63,7 +59,6 @@ main#payment-page {
                         margin: 0 auto;
                         display: block;
                     }
-
                 }
 
                 >div:nth-child(2) {
@@ -90,8 +85,6 @@ main#payment-page {
                     color: gray;
                     margin: 0;
                 }
-
-
             }
         }
     }
@@ -112,6 +105,8 @@ main#payment-page {
 
             input {
                 padding: 0.3rem;
+                border: 1px solid gainsboro;
+                border-radius: 0.3rem;
             }
 
             div {
@@ -137,10 +132,6 @@ main#payment-page {
         article {
             justify-self: center;
 
-            div {
-                display: flex;
-            }
-
             ul {
                 display: flex;
                 flex-direction: column;
@@ -154,12 +145,14 @@ main#payment-page {
             }
         }
 
-
-
         article#user-data {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
+
+            >div {
+                text-align: center;
+            }
 
             label {
                 display: block;
@@ -169,7 +162,6 @@ main#payment-page {
             input {
                 padding: 0.2rem;
             }
-
         }
 
         article#package-data {
@@ -197,12 +189,9 @@ main#payment-page {
                     background-color: rgb(243, 243, 166);
                     ;
                 }
-
-
             }
         }
     }
-
 
 
     form#main-form {
@@ -227,5 +216,4 @@ main#payment-page {
             }
         }
     }
-
 }

@@ -46,12 +46,12 @@ function User() {
             <div id="user-icon" onClick={handleVisibility}>
                 {isLogedIn ? <i className="fa-solid fa-user-check"></i> : <i className="fa-solid fa-user-xmark"></i>}
                 {isVisible && !isLogedIn ? (
-                    <div id='logIng-signIn-buttons'>
+                    <div id='logIng-signIn-buttons' className='flex flex-col absolute bottom-[-3rem] left-[6rem] p-2 lg:flex-row lg:top-[2.2rem] lg:bottom-auto lg:left-auto lg:right-[-1rem] lg:p-4'>
                         <button type="button" onClick={showLogInModal}>Inicia Sesión</button>
                         <button type="button"><Link to="/register">Regístrate</Link></button>
                     </div>
                 ) : isVisible && isLogedIn ? (
-                    <div id="loged-container">
+                    <div id="loged-container" className='top-[-6.5rem] left-[4rem] lg:top-[2.7rem] lg:right-[-1rem] lg:left-auto'>
                         <p>Bienvenido {userName.charAt(0).toUpperCase() + userName.slice(1)}!</p>
                         <button type="button"><Link to="/userArea"><i className="fa-solid fa-clipboard-user"></i>Área de usuario</Link></button>
                         <button type="button" onClick={closeSession}><i className="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesión</button>
@@ -62,8 +62,6 @@ function User() {
             {showLogIn && <LogInForm onClose={closeLogInModal} />}
         </>
     )
-
-
 }
 
 export default User;

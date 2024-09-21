@@ -2,7 +2,7 @@ import './_ReviewsHome.scss';
 
 function ReviewsHome() {
     return (
-        <section id="home-reviews-container">
+        <section id="home-reviews-container" className='flex flex-col items-center gap-4 sm:flex-row sm:justify-around sm:gap-0'>
             <article id="trust-container" className='review-box'>
                 <h3>TrustPilot</h3>
                 <div id="starsTrust">

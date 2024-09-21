@@ -55,9 +55,9 @@ function Contact() {
                     <p>O utiliza el formulario de contacto y nuestro equipo responderá en menos de 24 horas</p>
                 </section>
                 <section id="contact-form">
-                    <form onSubmit={handleEmailSubmit}>
+                    <form onSubmit={handleEmailSubmit} className='flex flex-col gap-y-8'>
 
-                        <article id="form-data-1">
+                        <article id="form-data-1" className='flex flex-col sm:flex-row gap-10'>
                             <div className='form-group'>
                                 <label htmlFor="name">Nombre</label>
                                 <input type="text" id="name" placeholder=' ' />
@@ -74,11 +74,11 @@ function Contact() {
                             </div>
 
                         </article>
-                        <article id="form-data-2">
+                        <article id="form-data-2" className='flex flex-col gap-6 sm:flex-row sm:justify-between sm:gap-0'>
                             <div className='form-group-select'>
                                 <label htmlFor="motiv">Motivo</label>
-                                <select name="subject" id="motiv" required>
-                                    <option value="false">Seleccione un asunto...</option>
+                                <select name="subject" id="motiv" required defaultValue={'false'}>
+                                    <option value="false" disabled>Seleccione un asunto...</option>
                                     <option value="doubt">Dudas y sugerencias</option>
                                     <option value="comercial">Información Comercial</option>
                                     <option value="other">Otro</option>
@@ -86,14 +86,15 @@ function Contact() {
                             </div>
                             <div className='form-group-select'>
                                 <label htmlFor="client">¿Eres cliente?</label>
-                                <select name="esCliente" id="client">
+                                <select name="esCliente" id="client" defaultValue={'false'}>
+                                    <option value="false" disabled>Seleccione una opción...</option>
                                     <option value="yes">Sí</option>
                                     <option value="no">No</option>
                                 </select>
                             </div>
 
                         </article>
-                        <article id="form-data-3">
+                        <article id="form-data-3" className='col-span-2 row-start-3'>
                             <textarea name="message" rows={8} required></textarea>
                             <button type="submit">Enviar</button>
                         </article>

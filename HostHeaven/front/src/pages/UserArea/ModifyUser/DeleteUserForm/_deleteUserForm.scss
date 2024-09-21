@@ -5,6 +5,7 @@ dialog#delete-dialog {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
+    padding: 1rem;
 
     >button {
         grid-row: 1;
@@ -14,10 +15,9 @@ dialog#delete-dialog {
         border: none;
         cursor: pointer;
 
-        &:hover{
+        &:hover {
             background-color: gainsboro;
         }
-
     }
 
     form#delete-account-form {
@@ -27,10 +27,14 @@ dialog#delete-dialog {
         gap: 2rem;
         padding-bottom: 1rem;
 
-
         >div {
             display: flex;
             gap: 0.5rem;
+
+            input {
+                border: 1px solid gainsboro;
+                border-radius: 0.5rem;
+            }
         }
 
         >button[type=submit] {
@@ -44,15 +48,15 @@ dialog#delete-dialog {
             color: white;
             font-size: 1rem;
             font-weight: bold;
-			 transition: all 0.2s;
+            transition: all 0.2s;
 
-            &:hover{
+            &:hover {
                 transition: all 0.2s;
                 box-shadow: 0px 0px 8px gray;
                 transform: scale(1.05);
             }
 
-            +p{
+            +p {
                 margin: -1rem 0 0;
                 text-align: center;
                 font-size: small;

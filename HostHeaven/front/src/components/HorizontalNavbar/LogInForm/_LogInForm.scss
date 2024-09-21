@@ -21,7 +21,6 @@ body.overflow {
         &:hover {
             background-color: gainsboro;
         }
-
     }
 
     #logIn-form {
@@ -32,7 +31,7 @@ body.overflow {
         >div {
             display: flex;
             flex-direction: column;
-            width: 15rem;
+            width: 100%;
 
             input {
                 padding: 0.2rem 0.5rem;
@@ -57,6 +56,5 @@ body.overflow {
                 color: white;
             }
         }
-
     }
 }

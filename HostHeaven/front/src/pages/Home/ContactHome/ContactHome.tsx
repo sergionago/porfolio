@@ -48,7 +48,7 @@ function ContactHome() {
 
     return (
         <section id="contact-home-container">
-            <article id="contact-img-container">
+            <article id="contact-img-container" className='hidden sm:block'>
                 <img src={imgContact} alt="Imagen Contacto" />
             </article>
             <article id='contact-form-container'>
@@ -56,8 +56,8 @@ function ContactHome() {
                 <form id='contact-form' onSubmit={handleEmailSubmit}>
                     <input type="text" id="name" placeholder='Nombre' />
                     <div id="telmail">
-                        <input type="tel" id="telephone" placeholder='Teléfono' />
-                        <input type="email" id="emailc" name="sender" placeholder='Correo electrónico' required />
+                        <input type="tel" id="telephone" placeholder='Teléfono' className='w-1/2 sm:w-auto'/>
+                        <input type="email" id="emailc" name="sender" placeholder='Email' required className='w-1/2 sm:w-auto'/>
                     </div>
                     <div id="msgbtn">
                         <div className='form-group-select'>

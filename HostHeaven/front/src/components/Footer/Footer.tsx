@@ -5,13 +5,13 @@ function Footer() {
 
     const logo = require('../../assets/logo/logo.png');
     return (
-        <footer>
+        <footer className='grid grid-rows-[auto_auto] grid-cols-[0.5fr_1fr]'>
             <section id="footer-logo">
                 <img src={logo} alt="Logo HostHeaven" />
             </section>
-            <section id="footer-social">
+            <section id="footer-social" className='gap-2 sm:gap-[2rem]'>
                 <article id="footer-social-icons">
-                    <ul>
+                    <ul className='flex gap-2 sm:gap-6'>
                         <li><i className="fa-brands fa-facebook" title="Facebook"></i></li>
                         <li><i className="fa-brands fa-x-twitter" title="X"></i></li>
                         <li><i className="fa-brands fa-instagram" title="Instagram"></i></li>
@@ -19,7 +19,7 @@ function Footer() {
                     </ul>
                 </article>
                 <article id="footer-social-links">
-                    <ul>
+                    <ul className='flex flex-col sm:flex-row sm:gap-4'>
                         <li><Link to="/conditions">Términos y Condiciones</Link></li>
                         <li><Link to="/privacy">Política de Privacidad</Link></li>
                         <li><Link to="/cookies">Política de Cookies</Link></li>

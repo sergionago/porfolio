@@ -81,7 +81,7 @@ function HostingSummary({ userData, contractedPackage }: { userData: UserData, c
 
 
     return (
-        <article id="hosting-summary">
+        <article id="hosting-summary" className='flex flex-col gap-y-4 md:grid md:grid-rows-[auto_auto] md:grid-cols-[auto_auto] md:gap-4'>
             <div id="userData">
                 <p>Sus datos:</p>
                 <p>{userData.name + " " + userData.surname}</p>
@@ -102,9 +102,9 @@ function HostingSummary({ userData, contractedPackage }: { userData: UserData, c
             </div>
             {contractedPackage ? (<div id="serviceData">
                 <p>Su servicio activo:</p>
-                <div>
+                <div className='flex flex-col gap-4 sm:flex-row sm:justify-between'>
                     <table>
-                        <tbody>
+                        <tbody className='flex flex-col gap-y-4'>
                             <tr>
                                 <td>Tipo</td>
                                 <td>{contractedPackage?.hostingPackage.hosting_type}</td>
@@ -133,7 +133,7 @@ function HostingSummary({ userData, contractedPackage }: { userData: UserData, c
                     </table>
 
                     <table>
-                        <tbody>
+                        <tbody className='flex flex-col gap-y-4'>
                             <tr>
                                 <td>¿Soporte?</td>
                                 <td>{contractedPackage?.hostingPackage.technical_support_24h ? "Sí" : "No"}</td>
@@ -161,7 +161,7 @@ function HostingSummary({ userData, contractedPackage }: { userData: UserData, c
                         </tbody>
                     </table>
                 </div>
-                <div>
+                <div className='flex flex-col'>
                     <label htmlFor="days-left">Días restantes para la renovación:</label>
                     <input type="text" id="days-left" readOnly value={daysLeft} />
                 </div>

@@ -10,8 +10,8 @@ function Header({ imagePath }: { imagePath: string }) {
     return (
         <header style={{ backgroundImage: `url(${imagePath})` }}>
             <HorizontalNavbar />
-            <section id="header-content">
-                <article>
+            <section id="header-content" className="flex flex-col gap-6 lg:flex-row">
+                <article className="hidden sm:flex">
                     <h1>15% de descuento en toda la web</h1>
                     <h2>¡Por tiempo limitado!</h2>
                     <div className="counter-header"><CountDownTimer /></div>

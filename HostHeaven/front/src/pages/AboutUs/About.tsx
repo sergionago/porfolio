@@ -24,18 +24,18 @@ function AboutUs() {
             <Header imagePath={imgUrl} />
             <main id="aboutUs-page">
                 <section id="about-company-container">
-                    <article>
+                    <article className='flex flex-col-reverse items-center lg:flex-row'>
                         <p>Iniciamos nuestro proyecto en el año 2002 y, desde entonces, no hemos dejado de trabajar para ofrecer el mejor servicio para nuestros clientes. Nuestra cartera de más de 3000 usuarios nos avalan, así como un crecimiento exponencial desde nuestra fundación.</p>
                         <img src={imgCompany2} alt="Equipo de Francia" title="Equipo de Francia" />
                     </article>
-                    <article>
+                    <article className='flex flex-col items-center lg:flex-row'>
                         <img src={imgCompany} alt="Técnico de Bélgica" title="Técnico de Bélgica" />
-                        <p>  En 2005, HostHeaven lanzó sus primeros servidores dedicados y, en 2010, introdujo sus soluciones de hosting VPS. Hoy en día, con más de 100 empleados y centros de datos en varias ubicaciones alrededor del mundo, HostHeaven sigue siendo fiel a sus raíces</p>
+                        <p>En 2005, HostHeaven lanzó sus primeros servidores dedicados y, en 2010, introdujo sus soluciones de hosting VPS. Hoy en día, con más de 100 empleados y centros de datos en varias ubicaciones alrededor del mundo, HostHeaven sigue siendo fiel a sus raíces</p>
                     </article>
                 </section>
                 <section id="company-numbers">
                     <h2>Nuestro progreso, en números</h2>
-                    <div>
+                    <div className='flex flex-col justify-around items-center lg:flex-row'>
                         <div>
                             <p>+3000</p>
                             <hr />
@@ -65,11 +65,11 @@ function AboutUs() {
                     </div>
 
                 </section>
-                <section id="about-team-container">
+                <section id="about-team-container" className='flex flex-col items-center xl:grid xl:grid-rows-1 xl:grid-cols-[1fr_1fr]'>
                     <article>
                         <p>Nos esforzamos por brindar una experiencia de usuario excepcional, desde la configuración inicial hasta la atención al cliente continua. Nuestro equipo está aquí para ayudarte en cada paso del camino, ya sea que necesites asistencia técnica, consejos sobre optimización del rendimiento o simplemente tengas preguntas sobre nuestros servicios.</p>
                     </article>
-                    <article id="rombhus-container" title="Equipo de Málaga">
+                    <article id="rombhus-container" title="Equipo de Málaga" className='hidden sm:block sm:mr-40 xl:mr-0'>
                         <div>
                             <span><img src={team1} alt="Team 1" /></span>
                             <span><img src={team2} alt="Team 2" /></span>
@@ -88,7 +88,7 @@ function AboutUs() {
                     </article >
 
 
-                    <article id="logo-container">
+                    <article id="logo-container" className='hidden sm:flex'>
                         <p>Tu éxito</p>
                         <img src={logo} alt="Logo" />
                         <p>nuestro hosting</p>

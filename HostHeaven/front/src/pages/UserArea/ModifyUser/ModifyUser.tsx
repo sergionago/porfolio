@@ -120,35 +120,35 @@ function ModifyUser({ userData, userID }: { userData: UserData, userID: number }
     return (
         <article id="user-data">
             <p>Aquí puede modificar sus datos</p>
-            <div>
-                <form action="#" id="user-data-form" onSubmit={handleSubmitUserData}>
-                    <div>
-                        <div>
+            <div className='flex flex-col items-center gap-6 sm:flex-row sm:justify-around'>
+                <form action="#" id="user-data-form" onSubmit={handleSubmitUserData} className='flex flex-col gap-y-4'>
+                    <div className='flex flex-col'>
+                        <div className='flex flex-col'>
                             <label htmlFor="nomb">Nombre</label>
                             <input type="text" id="nomb" name="name" defaultValue={userData.name} onChange={handleChangeUserData} />
                         </div>
-                        <div>
+                        <div className='flex flex-col'>
                             <label htmlFor="ape">Apellidos</label>
                             <input type="text" id="ape" name="surname" defaultValue={userData.surname} onChange={handleChangeUserData} />
                         </div>
                     </div>
-                    <div>
+                    <div className='flex flex-col'>
                         <label htmlFor="mail">Email</label>
                         <input type="email" id="mail" name="email" defaultValue={userData.email} onChange={handleChangeUserData} />
                     </div>
                     <button type="submit">Actualizar mis datos</button>
                 </form>
-                <form action="#" id="change-pass-form" onSubmit={handleSubmitPassword}>
-                    <div>
+                <form action="#" id="change-pass-form" onSubmit={handleSubmitPassword} className='flex flex-col gap-y-4 items-center'>
+                    <div className='flex flex-col'>
                         <label htmlFor="passAct">Contraseña actual</label>
                         <input type="password" id="passAct" name="actual_pass" onChange={handleChangePassword} />
                     </div>
-                    <div>
-                        <div>
+                    <div className='flex flex-col'>
+                        <div className='flex flex-col items-center'>
                             <label htmlFor="passNew">Nueva contraseña</label>
                             <input type="password" id="passNew" name="new_pass" onChange={handleChangePassword} />
                         </div>
-                        <div>
+                        <div className='flex flex-col items-center'>
                             <label htmlFor="passRep">Repita la contraseña</label>
                             <input type="password" id="passRep" name="new_pass_rep" onChange={handleChangePassword} />
                         </div>
@@ -156,7 +156,7 @@ function ModifyUser({ userData, userID }: { userData: UserData, userID: number }
                     <button type="submit">Cambiar contraseña</button>
                 </form>
             </div>
-            <button type="button" id="delete-user" onClick={showDeleteForm}>Quiero eliminar mi cuenta</button>
+            <button type="button" id="delete-user" onClick={showDeleteForm}>Eliminar mi cuenta</button>
             {showDeleteModal && <DeleteUserForm user_id={userID} onClose={closeDeleteModal} />}
             {responseData.status !== 0 && <ServerResponse responseStatus={responseData.status} response={responseData.response} />}
         </article>

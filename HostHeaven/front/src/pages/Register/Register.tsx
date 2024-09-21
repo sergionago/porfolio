@@ -73,14 +73,14 @@ function Register() {
     return (
         <>
             <Header imagePath={imgUrl} />
-            <main id="register-page">
-                <h1>No esperes más y aloja tus proyectos en HostHeaven</h1>
-                <section id="register-img-container">
+            <main id="register-page" className='flex flex-col md:grid md:grid-rows-[auto_auto] md:grid-cols-[1fr_2fr]'>
+                <h1 className='row-start-1 col-span-2'>No esperes más y aloja tus proyectos en HostHeaven</h1>
+                <section id="register-img-container" className='md:row-start-2 md:col-start-1'>
                     <img src={imgRegister} alt="Imagen Registro" />
                 </section>
-                <section id="register-form-container">
+                <section id="register-form-container" className='md:row-start-2 md:col-start-2'>
                     <form onSubmit={HandleSubmit}>
-                        <div>
+                        <div className='flex flex-col gap-4 sm:flex-row sm:gap-40'>
                             <div className='form-group'>
                                 <label htmlFor="name">Nombre</label>
                                 <input type="text" id="name" name="name" placeholder=' ' />
@@ -91,7 +91,7 @@ function Register() {
                             </div>
                         </div>
 
-                        <div>
+                        <div className='flex flex-col gap-4 sm:flex-row sm:gap-40'>
                             <div className='form-group'>
                                 <label htmlFor="mail">Email</label>
                                 <input type="email" id="mail" name="email" placeholder=' ' />

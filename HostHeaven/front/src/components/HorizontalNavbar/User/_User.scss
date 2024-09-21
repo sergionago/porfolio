@@ -3,7 +3,6 @@
 #user-icon {
     cursor: pointer;
     position: relative;
-    padding-right: 2rem;
     transition: all 0.3s;
 
     >i {
@@ -16,17 +15,10 @@
     }
 
 
-
-
     #logIng-signIn-buttons {
-        display: flex;
-        position: absolute;
-        top: 2.2rem;
-        right: 0;
         border: 2px solid black;
-        padding: 1.5rem 3rem;
         background-color: #F0EFEB;
-        gap: 2rem;
+        gap: 1.5rem;
         width: max-content;
 
         button {
@@ -47,7 +39,6 @@
             text-decoration: none;
             color: black;
         }
-
     }
 
     #loged-container {
@@ -55,8 +46,6 @@
         flex-direction: column;
         align-items: center;
         position: absolute;
-        top: 2.2rem;
-        right: 0;
         border: 2px solid black;
         padding: 1rem;
         background-color: vars.$background-white;
@@ -98,7 +87,6 @@
                 transition: all 0.5s;
                 border-radius: 0.5rem;
             }
-
         }
 
         button:not(:first-of-type) {
@@ -116,6 +104,5 @@
                 color: white;
             }
         }
-
     }
 }

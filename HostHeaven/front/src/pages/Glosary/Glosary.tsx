@@ -37,17 +37,17 @@ function Glosary() {
         <>
             <Header imagePath={imgUrl} />
 
-            <main id="glosary-page">
-                <h3>El hosting puede resultar complejo. Deja que te ayudemos</h3>
-                <aside id="concept-names-container">
-                    <ul>
+            <main id="glosary-page" className='grid grid-rows-[auto_auto_auto] grid-cols-[1fr_2fr] md:grid-rows-[auto_auto]'>
+                <h3 className='row-start-1 col-span-3'>El hosting puede resultar complejo. Deja que te ayudemos</h3>
+                <aside id="concept-names-container" className='row-start-2 col-span-2 overflow-x-hidden md:overflow-x-auto md:col-start-1 md:col-span-1'>
+                    <ul className='flex w-full overflow-x-scroll md:flex-col md:w-auto md:h-[20rem] md:overflow-y-scroll'>
                         {concepts.map((concept) => (
                             <li key={concept.id_concept} id={concept.id_concept.toString()} onClick={handleClick}>{concept.concept_name}</li>
                         ))
                         }
                     </ul>
                 </aside>
-                <section id="description-containers">
+                <section id="description-containers" className='row-start-3 col-span-2 md:row-start-2 md:col-start-2'>
                     <ConceptView concept={seeConcept} />
                 </section>
             </main>

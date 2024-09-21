@@ -152,11 +152,11 @@ function ModifyService({ contractedPackage, userID }: { contractedPackage: Hosti
 
 
     return (
-        <article id="edit-service">
+        <article id="edit-service" className='flex flex-col justify-center items-center'>
             {contractedPackage ? (
-                <article>
+                <article className='w-full'>
 
-                    <div>
+                    <div className='flex flex-col gap-y-4 sm:flex-row sm:justify-around'>
                         <button type="button" onClick={showEditDialog}>Actualizar mi servicio</button>
                         <button type="button" onClick={showDeleteDialog}>Eliminar mi servicio</button>
                     </div>

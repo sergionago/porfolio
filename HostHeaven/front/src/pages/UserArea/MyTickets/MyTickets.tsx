@@ -40,9 +40,9 @@ function MyTickets({ user_id }: { user_id: number }) {
 
 
     return (
-        <article id="user-tickets">
+        <article id="user-tickets" className="flex flex-col gap-4 md:grid md:grid-rows-[auto] md:grid-cols-[15%_85%] md:h-[20rem] md:items-center">
             {tickets.length > 0 && <div>
-                <ul>
+                <ul className="flex overflow-x-scroll gap-2 md:flex-col md:overflow-y-scroll md:h-[15rem]">
                     {tickets.map((ticket: Ticket) => (
                         <li key={ticket.id_email_request} className={`${ticket.response === null ? "not-resolved" : "resolved"} ${ticket.id_email_request === selectedTicket?.id_email_request ? "active" : ""}`} id={ticket.id_email_request.toString()} onClick={viewDetail}>Ticket {ticket.id_email_request}</li>
                     ))}
@@ -51,7 +51,7 @@ function MyTickets({ user_id }: { user_id: number }) {
 
 
             {tickets.length > 0 ? (
-                <div>
+                <div className="flex flex-col w-[70%] sm:w-full">
                     {selectedTicket ? (
                         <>
                             <div>
